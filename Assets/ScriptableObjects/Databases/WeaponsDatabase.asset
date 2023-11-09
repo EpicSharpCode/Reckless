@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deacbc047f194554e8487cabc4500b48, type: 3}
+  m_Name: WeaponsDatabase
+  m_EditorClassIdentifier: 
+  weapons:
+  - itemName: Pistol
+    localizedName: Pistol
+    value: 100
+    weaponPrefrence: {fileID: 11400000, guid: c51b4617222434d4c9e334d4ebd8f786, type: 2}
+  - itemName: SMG
+    localizedName: SMG
+    value: 100
+    weaponPrefrence: {fileID: 11400000, guid: 7bd750b553596eb42899b9fa8997bc46, type: 2}
