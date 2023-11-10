@@ -19,6 +19,7 @@ namespace Reckless
 
         private void Update()
         {
+            if(player == null) return;
             transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, Time.deltaTime * speed);
         }
     }

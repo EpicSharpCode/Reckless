@@ -35,9 +35,11 @@ namespace Reckless.Unit
                 transform.position.x,
                 transform.position.y + weaponYOffset,
                 transform.position.z);
-            var goal = thisEnemy.GetGoal().transform.position;
-            goal.y = weaponOrigin.y;
-            Vector3 direction = (goal - weaponOrigin).normalized;
+            var goal = thisEnemy.GetGoal();
+            if(goal == null) yield break;
+            var goalPos = thisEnemy.GetGoal().transform.position;
+            goalPos.y = weaponOrigin.y;
+            Vector3 direction = (goalPos - weaponOrigin).normalized;
 
             Debug.Log($"Fire with fire rate: {weaponPreference.GetFireRate()}");
 

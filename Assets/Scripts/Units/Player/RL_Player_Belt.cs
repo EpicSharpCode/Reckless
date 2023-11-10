@@ -52,7 +52,9 @@ namespace Reckless.Unit
                     transform.position.y + weaponYOffset,
                     transform.position.z);
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit raycastHit = Physics.RaycastAll(ray)[0];
+                RaycastHit[] raycastHits = Physics.RaycastAll(ray);
+                if(raycastHits.Length == 0) yield break;
+                RaycastHit raycastHit = raycastHits[0];
                 Vector3 hit = raycastHit.point;
                 hit.y = weaponOrigin.y;
                 Vector3 direction = (hit - weaponOrigin).normalized;
