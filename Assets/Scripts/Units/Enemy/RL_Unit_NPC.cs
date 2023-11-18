@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Reckless.Unit
 {
-    public class RL_Enemy : RL_Unit
+    public class RL_Unit_NPC : RL_Unit
     {
         [Header("Enemy Settings")]
         [SerializeField] RL_Unit goal;

@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace Reckless.Unit
 {
-    public class RL_Enemy_Belt : MonoBehaviour
+    public class RL_Unit_NPC_Belt : MonoBehaviour
     {
         [SerializeField] RL_WeaponPrefrence weaponPreference;
         [SerializeField] float weaponYOffset = 1;
 
-        RL_Enemy thisEnemy;
+        RL_Unit_NPC thisNPC;
 
         Coroutine makeFireCorutine = null;
 
         private void Awake()
         {
-            thisEnemy = GetComponent<RL_Enemy>();
+            thisNPC = GetComponent<RL_Unit_NPC>();
         }
 
         // Update is called once per frame
@@ -35,9 +35,9 @@ namespace Reckless.Unit
                 transform.position.x,
                 transform.position.y + weaponYOffset,
                 transform.position.z);
-            var goal = thisEnemy.GetGoal();
+            var goal = thisNPC.GetGoal();
             if(goal == null) yield break;
-            var goalPos = thisEnemy.GetGoal().transform.position;
+            var goalPos = thisNPC.GetGoal().transform.position;
             goalPos.y = weaponOrigin.y;
             Vector3 direction = (goalPos - weaponOrigin).normalized;
 

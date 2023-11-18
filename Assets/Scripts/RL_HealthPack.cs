@@ -9,10 +9,12 @@ namespace Reckless.Environment
     public class RL_HealthPack : MonoBehaviour, RL_IPickupable
     {
         [SerializeField] float healthPoints = 10;
-        public void Pickup(RL_Unit player)
+        [SerializeField] private bool onlyForPlayer = true;
+        public void Pickup(RL_Unit unit)
         {
-            var status = player.AddHealth(healthPoints);
-            if(status) Destroy(gameObject);
+            if(onlyForPlayer) { if(unit is RL_Player == false) return; }
+            float addedValue = unit.GetHealth().AddValue(healthPoints);
+            if(addedValue > 0) Destroy(gameObject);
         }
     }
 }
