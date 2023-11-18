@@ -6,15 +6,15 @@ using UnityEngine.AI;
 
 namespace Reckless.Unit {
 
-    public class RL_Enemy_Movement : MonoBehaviour
+    public class RL_Unit_NPC_Movement : MonoBehaviour
     {
         [SerializeField] NavMeshAgent agent;
 
-        RL_Enemy thisEnemy;
+        RL_Unit_NPC thisEnemy;
 
         private void Awake()
         {
-            thisEnemy = GetComponent<RL_Enemy>();
+            thisEnemy = GetComponent<RL_Unit_NPC>();
         }
 
 

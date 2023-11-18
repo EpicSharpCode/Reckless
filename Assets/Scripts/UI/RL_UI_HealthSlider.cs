@@ -6,20 +6,22 @@ using UnityEngine.UI;
 
 namespace Reckless.UI
 {
-    public class RL_UI_HealthSlider : MonoBehaviour
+    public class RL_UI_ParameterSlider : MonoBehaviour
     {
-        public static RL_UI_HealthSlider instance { get;private set; }
-        Slider healthSlider;
+        Slider slider;
+        RL_Unit unit;
 
         private void Awake()
         {
-            instance = this;
-            healthSlider = GetComponent<Slider>();
+            slider = GetComponent<Slider>();
         }
 
-        public static void UpdateHealth()
+        public void Init(RL_Unit _unit) => unit = _unit;
+
+        public void UpdateParameter()
         {
-            instance.healthSlider.value = RL_Player.GetHealth() / RL_Player.GetMaxHealth();
+            var parameter = unit.GetHealth();
+            slider.value = parameter.GetValue() / parameter.GetMax();
         }
     }
 }

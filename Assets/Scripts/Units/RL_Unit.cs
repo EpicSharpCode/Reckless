@@ -8,55 +8,37 @@ namespace Reckless.Unit
 {
     public class RL_Unit : MonoBehaviour
     {
-        public static RL_Unit instance { get; private set; }
+        [SerializeField] RL_Unit_BehaviorPattern behaviorPattern;
 
-        [Header("Health")]
-        [SerializeField] float maxHealth = 100;
-        [SerializeField] float health = 0;
-        [Header("Armor")]
-        [SerializeField] float maxArmor = 100;
-        [SerializeField] float armor = 0;
+        [SerializeField] RL_Unit_Parameter health;
+        [SerializeField] RL_Unit_Parameter armor;
 
-        private void Awake() => instance = this;
-
-        void Start()
+        private void Awake()
         {
-            health = maxHealth / 2;
-            RL_UI_HealthSlider.UpdateHealth();
+            health = new RL_Unit_Parameter("Health", 100);
+            armor = new RL_Unit_Parameter("Armor", 100);
         }
 
 
         public virtual void OnTriggerEnter(Collider other) { }
 
-        public bool AddHealth(float amount)
-        {
-            if (health == maxHealth) { return false; }
-            if (maxHealth < health + amount) { health = maxHealth; return true; }
-            health += amount;
-            RL_UI_HealthSlider.UpdateHealth();
-            return true;
-        }
-        public bool AddArmor(float amount)
-        {
-            if (armor == maxArmor) { return false; }
-            if (maxArmor < armor + amount) { armor = maxArmor; return true; }
-            armor += amount;
-            return true;
-        }
+        public RL_Unit_Parameter GetHealth() => health;
+        public RL_Unit_Parameter GetArmor() => armor;
 
-        public bool ReduceHealth(float amount)
+        public void Damage(float _amount)
         {
-            if (health == 0) { Destroy(gameObject); return false; }
-            health -= amount;
-            if (health < 0) { health = 0; return true; }
-
-            if (this is RL_Player) RL_UI_HealthSlider.UpdateHealth();
-            return true;
+            while (_amount > 0)
+            {
+                if(health.GetValue() == 0) return;
+                var affectArmor = armor.ReduceValue(_amount);
+                if (affectArmor > 0) _amount -= affectArmor;
+                if (affectArmor == 0)
+                {
+                    var affectHealth = health.ReduceValue(_amount);
+                    if (affectHealth > 0) _amount -= affectHealth;
+                }
+                if(_amount <= 0.001f ) {break;}
+            }
         }
-
-        public static float GetHealth() => instance.health;
-        public static float GetMaxHealth() => instance.maxHealth;
-        public static float GetArmor() => instance.armor;
-        public static float GetMaxArmor() => instance.maxArmor;
     }
 }

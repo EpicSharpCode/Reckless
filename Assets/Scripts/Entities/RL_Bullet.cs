@@ -17,7 +17,7 @@ namespace Reckless
             var unit = collision.gameObject.GetComponent<RL_Unit>();
             if (unit != null) 
             {
-                unit.ReduceHealth(damage);
+                unit.Damage(damage);
             }
             Destroy(gameObject);
         }
