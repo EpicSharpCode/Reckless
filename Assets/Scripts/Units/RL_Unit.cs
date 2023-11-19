@@ -8,8 +8,6 @@ namespace Reckless.Unit
 {
     public class RL_Unit : MonoBehaviour
     {
-        [SerializeField] RL_Unit_BehaviorPattern behaviorPattern;
-
         [SerializeField] RL_Unit_Parameter health;
         [SerializeField] RL_Unit_Parameter armor;
 
@@ -25,11 +23,19 @@ namespace Reckless.Unit
         public RL_Unit_Parameter GetHealth() => health;
         public RL_Unit_Parameter GetArmor() => armor;
 
-        public void Damage(float _amount)
+        public bool CheckDie()
+        {
+            if(health.GetValue() == 0) {
+                Destroy(gameObject);
+                return true;
+            }
+            return false;
+        }
+        public bool Damage(float _amount)
         {
             while (_amount > 0)
             {
-                if(health.GetValue() == 0) return;
+                if(health.GetValue() == 0) break;
                 var affectArmor = armor.ReduceValue(_amount);
                 if (affectArmor > 0) _amount -= affectArmor;
                 if (affectArmor == 0)
@@ -39,6 +45,9 @@ namespace Reckless.Unit
                 }
                 if(_amount <= 0.001f ) {break;}
             }
+
+            CheckDie();
+            return true;
         }
     }
 }

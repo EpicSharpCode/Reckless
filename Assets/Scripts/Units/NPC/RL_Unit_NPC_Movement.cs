@@ -4,24 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Reckless.Unit {
-
+namespace Reckless.Unit.AI 
+{
     public class RL_Unit_NPC_Movement : MonoBehaviour
     {
         [SerializeField] NavMeshAgent agent;
+        [SerializeField] List<Transform> patrolingPoints;
 
-        RL_Unit_NPC thisEnemy;
+        RL_Unit_NPC thisNPC;
 
         private void Awake()
         {
-            thisEnemy = GetComponent<RL_Unit_NPC>();
+            thisNPC = GetComponent<RL_Unit_NPC>();
         }
 
 
         void Update()
         {
-            if (thisEnemy.GetGoal() == null) return;
-            agent.SetDestination(thisEnemy.GetGoal().transform.position);
+            if (thisNPC.GetGoal().Equals(null)) return;
+            agent.SetDestination(thisNPC.GetGoal().transform.position);
         }
     }
 }

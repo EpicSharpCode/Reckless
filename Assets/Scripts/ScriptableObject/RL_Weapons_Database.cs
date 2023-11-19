@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Reckless.Items
 {
-    [CreateAssetMenu(fileName = "WeaponsDatabase", menuName = "Hotline/WeaponsDatabase")]
+    [CreateAssetMenu(fileName = "WeaponsDatabase", menuName = "Reckless/WeaponsDatabase")]
     public class RL_Weapons_Database : ScriptableObject
     {
         [SerializeField] List<RL_WeaponObject> weapons;

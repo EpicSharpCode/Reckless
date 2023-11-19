@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Reckless.Unit
+namespace Reckless.Unit.AI
 {
     public class RL_Unit_NPC_Belt : MonoBehaviour
     {

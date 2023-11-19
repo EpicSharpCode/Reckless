@@ -2476,6 +2476,14 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 2073440629}
+    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: abilities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: abilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 900157e51bc0743f3b0b1d8912d55ed8, type: 2}
     - target: {fileID: 760757960849622335, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: m_RootOrder
       value: 17
