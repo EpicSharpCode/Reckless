@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Reckless.Weapon
 {
-    [CreateAssetMenu(fileName = "Weapon", menuName = "Hotline/Weapon")]
+    [CreateAssetMenu(fileName = "Weapon", menuName = "Reckless/Weapon")]
     public class RL_WeaponPrefrence : ScriptableObject
     {
         [SerializeField] float fireRate = 0.5f;
