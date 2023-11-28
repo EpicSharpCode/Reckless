@@ -7,7 +7,7 @@ namespace Reckless.Unit.AI
 {
     public class RL_Unit_NPC_Belt : MonoBehaviour
     {
-        [SerializeField] RL_WeaponPrefrence weaponPreference;
+        [SerializeField] RL_WeaponPreference weaponPreference;
         [SerializeField] float weaponYOffset = 1;
 
         RL_Unit_NPC thisNPC;
@@ -35,21 +35,21 @@ namespace Reckless.Unit.AI
                 transform.position.x,
                 transform.position.y + weaponYOffset,
                 transform.position.z);
-            var goal = thisNPC.GetGoal();
+            var goal = thisNPC.Goal;
             if(goal == null) yield break;
-            var goalPos = thisNPC.GetGoal().transform.position;
+            var goalPos = thisNPC.Goal.transform.position;
             goalPos.y = weaponOrigin.y;
             Vector3 direction = (goalPos - weaponOrigin).normalized;
 
-            Debug.Log($"Fire with fire rate: {weaponPreference.GetFireRate()}");
+            Debug.Log($"Fire with fire rate: {weaponPreference.FireRate}");
 
-            var bullet = Instantiate(weaponPreference.GetBulletPrefab());
+            var bullet = Instantiate(weaponPreference.BulletPrefab);
             bullet.transform.position = weaponOrigin + direction;
-            bullet.Setup(Random.Range(weaponPreference.GetDamageMin(), weaponPreference.GetDamageMax()));
+            bullet.Setup(Random.Range(weaponPreference.DamageMin, weaponPreference.DamageMax));
 
             bullet.GetComponent<Rigidbody>().AddForce(direction * 1000);
 
-            yield return new WaitForSeconds(weaponPreference.GetFireRate());
+            yield return new WaitForSeconds(weaponPreference.FireRate);
             makeFireCorutine = null;
         }
     }

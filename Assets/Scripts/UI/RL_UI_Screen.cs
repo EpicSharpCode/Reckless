@@ -6,7 +6,6 @@ namespace Reckless.UI
 {
     public abstract class RL_UI_Screen : MonoBehaviour
     {
-        [SerializeField] string screenName;
-        public string GetScreenName() => screenName;
+        [field:SerializeField] public string ScreenName { get; private set; }
     }
 }

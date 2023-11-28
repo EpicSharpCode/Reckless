@@ -7,15 +7,14 @@ namespace Reckless.Unit.AI
 {
     public class RL_Unit_NPC : RL_Unit
     {
-        [Header("NPC Settings")]
-        [SerializeField] RL_Unit goal;
-        [SerializeField] List<RL_Unit_NPC_Ability> abilities;
+        [field:Header("NPC Settings")]
+        [field:SerializeField] public RL_Unit Goal { get; private set; }
+
+        [field:SerializeField] public List<RL_Unit_NPC_Ability> Abilities { get; private set; }
 
         private void Update()
         {
-            abilities.ForEach(x => x.PerformUpdateAction(GetComponent<RL_Unit>()));
+            Abilities.ForEach(x => x.PerformUpdateAction(GetComponent<RL_Unit>()));
         }
-
-        public RL_Unit GetGoal() => goal;
     }
 }

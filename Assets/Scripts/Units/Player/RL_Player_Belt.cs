@@ -42,7 +42,7 @@ namespace Reckless.Unit
         public IEnumerator MakeFire()
         {
             if (currentWeapon == null) { yield break; }
-            var weaponPreference = currentWeapon.GetWeaponPrefrence();
+            var weaponPreference = currentWeapon.WeaponPrefrence;
             if (weaponPreference == null) { yield break; }
 
             if (Input.GetMouseButton(0))
@@ -59,17 +59,17 @@ namespace Reckless.Unit
                 hit.y = weaponOrigin.y;
                 Vector3 direction = (hit - weaponOrigin).normalized;
 
-                Debug.Log($"Fire with fire rate: {weaponPreference.GetFireRate()}");
+                Debug.Log($"Fire with fire rate: {weaponPreference.FireRate}");
 
-                var bullet = Instantiate(weaponPreference.GetBulletPrefab());
+                var bullet = Instantiate(weaponPreference.BulletPrefab);
                 bullet.transform.position = weaponOrigin + direction;
-                bullet.Setup(Random.Range(weaponPreference.GetDamageMin(), weaponPreference.GetDamageMax()));
+                bullet.Setup(Random.Range(weaponPreference.DamageMin, weaponPreference.DamageMax));
 
                 bullet.GetComponent<Rigidbody>().AddForce(direction * 1000);
 
 
             }
-            yield return new WaitForSeconds(weaponPreference.GetFireRate());
+            yield return new WaitForSeconds(weaponPreference.FireRate);
             makeFireCorutine = null;
         }
 
@@ -92,7 +92,7 @@ namespace Reckless.Unit
         }
         public bool RemoveWeapon(string name)
         {
-            return RemoveWeapon(weapons.Find(x => x.GetName() == name));
+            return RemoveWeapon(weapons.Find(x => x.ItemName == name));
         }
     }
 }

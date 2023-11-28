@@ -21,8 +21,8 @@ namespace Reckless.Unit.AI
 
         void Update()
         {
-            if (thisNPC.GetGoal().Equals(null)) return;
-            agent.SetDestination(thisNPC.GetGoal().transform.position);
+            if (thisNPC?.Goal == null) return;
+            agent.SetDestination(thisNPC.Goal.transform.position);
         }
     }
 }

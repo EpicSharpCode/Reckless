@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ItemsDatabase
   m_EditorClassIdentifier: 
   items:
-  - itemName: Example
-    localizedName: Example
-    value: 10
+  - <ItemName>k__BackingField: Test
+    <LocalizedName>k__BackingField: "\u0422\u0435\u0441\u0442"
+    <Value>k__BackingField: 1

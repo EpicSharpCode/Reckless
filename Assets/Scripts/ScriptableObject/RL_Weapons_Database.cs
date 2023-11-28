@@ -9,6 +9,6 @@ namespace Reckless.Items
     {
         [SerializeField] List<RL_WeaponObject> weapons;
 
-        public RL_WeaponObject GetWeapon(string _name) => weapons.Find(x => x.GetName() == _name);
+        public RL_WeaponObject GetWeapon(string _name) => weapons.Find(x => x.ItemName == _name);
     }
 }

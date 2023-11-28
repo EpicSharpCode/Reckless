@@ -27,7 +27,7 @@ namespace Reckless.Unit
         }
         public bool RemoveItem(string name)
         {
-            return RemoveItem(items.Find(x => x.GetName() == name));
+            return RemoveItem(items.Find(x => x.ItemName == name));
         }
     }
 }

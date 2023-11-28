@@ -11,14 +11,15 @@ namespace Reckless.Items
     {
         [SerializeField] internal TMP_Text itemText;
         [SerializeField] internal string itemName;
-        [SerializeField] RL_ItemObject itemObject;
+        
+        RL_ItemObject itemObject;
 
         private void Start() => Setup(itemName);
 
         public virtual void Setup(string _itemName) 
         { 
             itemObject = RL_GlobalVariables.GetItem(_itemName);
-            itemText.text = itemObject.GetLocalizedName();
+            itemText.text = itemObject.LocalizedName;
         }
 
         public virtual void Pickup(RL_Unit player)
