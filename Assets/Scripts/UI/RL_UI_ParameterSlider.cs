@@ -7,9 +7,12 @@ using UnityEngine.UI;
 
 namespace Reckless.UI
 {
-    public class RL_UI_ParameterSlider : MonoBehaviour
+    public class RL_UI_ParameterSlider : RL_UI_ParameterOutput
     {
         Slider slider;
+        RL_Unit_Parameter parameter;
+
+        [SerializeField] string parameterName;
         [SerializeField] RL_Unit unit;
 
         private void Awake()
@@ -17,16 +20,15 @@ namespace Reckless.UI
             slider = GetComponent<Slider>();
         }
 
-        private void Start()
+        private void Update()
         {
-            UpdateParameter();
+            if(parameter == null) Init(unit.Parameters.Find(x=>x.ParameterName == parameterName));
+            Output();
         }
 
-        public void Init(RL_Unit _unit) => unit = _unit;
-
-        public void UpdateParameter()
+        public void Init(RL_Unit_Parameter _parameter) => parameter = _parameter;
+        public override void Output()
         {
-            var parameter = unit?.Health;
             slider.value = parameter.Value / parameter.MaxValue;
         }
     }

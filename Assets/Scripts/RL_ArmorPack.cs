@@ -8,11 +8,12 @@ namespace Reckless.Environment
     public class RL_ArmorPack : MonoBehaviour, RL_IPickupable
     {
         [SerializeField] float armorPoints = 10;
+        [SerializeField] string parameterName = "Armor";
         [SerializeField] private bool onlyForPlayer = true;
         public void Pickup(RL_Unit unit)
         {
             if(onlyForPlayer) { if(unit is RL_Player == false) return; }
-            float addedValue = unit.Armor.AddValue(armorPoints);
+            float addedValue = unit.GetParameter(parameterName).AddValue(armorPoints);
             if(addedValue > 0) Destroy(gameObject);
         }
     }
