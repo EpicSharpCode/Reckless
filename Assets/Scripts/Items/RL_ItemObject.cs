@@ -7,18 +7,15 @@ namespace Reckless.Items
     [System.Serializable]
     public class RL_ItemObject
     {
-        [SerializeField] string itemName;
-        [SerializeField] string localizedName;
-        [SerializeField] float value;
+        [field:SerializeField] public string ItemName { get; private set; }
+        [field: SerializeField] public string LocalizedName { get; private set; }
+        [field:SerializeField] public float Value { get; private set; }
 
         public RL_ItemObject(RL_ItemObject _itemObject)
         {
-            itemName = _itemObject.itemName;
-            localizedName = _itemObject.localizedName;
-            value = _itemObject.value;
+            ItemName = _itemObject.ItemName;
+            LocalizedName = _itemObject.LocalizedName;
+            Value = _itemObject.Value;
         }
-
-        public string GetName() => itemName;
-        public string GetLocalizedName() => localizedName;
     }
 }

@@ -6,6 +6,5 @@ namespace Reckless.UI
 {
     public class RL_UI_SettingsScreen : RL_UI_Screen
     {
-        public void SetSoundState(bool state) { }
     }
 }

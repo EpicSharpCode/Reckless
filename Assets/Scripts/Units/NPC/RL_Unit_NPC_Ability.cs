@@ -6,10 +6,9 @@ namespace Reckless.Unit.AI
 {
     public class RL_Unit_NPC_Ability : ScriptableObject
     {
-        [SerializeField] string abilityName;
-        [SerializeField] float abilityValue;
+        [field:SerializeField] public string AbilityName { get; private set; }
+        [field:SerializeField] public float AbilityValue { get; private set; }
 
-        public float GetValue() => abilityValue;
         public virtual void PerformUpdateAction(RL_Unit _thisUnit) {}
     }
 }

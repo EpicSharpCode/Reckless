@@ -19,24 +19,14 @@ namespace Reckless.UI
         public void ShowScreen(string screenName)
         {
             HideCurrentScreen();
-            var screen = screens.Find(_screen => _screen.GetScreenName() == screenName);
+            var screen = screens.Find(_screen => _screen.ScreenName == screenName);
             screen.gameObject.SetActive(true);
             screen.transform.localPosition = Vector3.zero;
             currentScreen = screen;
         }
 
-        public void HideCurrentScreen()
-        {
-            if(currentScreen == null) return;
-            currentScreen.gameObject.SetActive(false);
-        }
+        public void HideCurrentScreen() => currentScreen?.gameObject.SetActive(false);
 
-        public void HideAllScreens()
-        {
-            foreach (var scr in screens)
-            {
-                scr.gameObject.SetActive(false);
-            }
-        }
+        public void HideAllScreens() => screens.ForEach(x => x.gameObject.SetActive(false));
     }
 }

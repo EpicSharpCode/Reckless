@@ -16,7 +16,7 @@ namespace Reckless.Unit.AI
         public List<RL_Unit> ScanForUnits(RL_Unit _thisUnit)
         {
             List<RL_Unit> foundedUnits = new List<RL_Unit>();
-            for(float i = -GetValue()/2; i < GetValue()/2; i++)
+            for(float i = -AbilityValue/2; i < AbilityValue/2; i++)
             {
                 var found = RaycastAngle(_thisUnit, i);
                 if(found == null) continue;

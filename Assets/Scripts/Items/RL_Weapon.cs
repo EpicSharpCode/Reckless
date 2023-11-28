@@ -9,7 +9,7 @@ namespace Reckless.Items
 {
     public class RL_Weapon : RL_Item
     {
-        [SerializeField] RL_WeaponObject weaponObject;
+        RL_WeaponObject weaponObject;
 
         public RL_Weapon(RL_WeaponObject _weaponObject)
         {
@@ -19,7 +19,7 @@ namespace Reckless.Items
         public override void Setup(string _itemName)
         {
             weaponObject = RL_GlobalVariables.GetWeapon(_itemName);
-            itemText.text = weaponObject.GetLocalizedName();
+            itemText.text = weaponObject.LocalizedName;
         }
         public override void Pickup(RL_Unit player)
         {
@@ -28,7 +28,5 @@ namespace Reckless.Items
             var status = playerBelt.AddWeapon(weaponObject);
             if (status) Destroy(gameObject);
         }
-
-        public RL_WeaponPrefrence GetWeaponPreference() => weaponObject.GetWeaponPrefrence();
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9beb175e4616fa540a4de4afcf01aaa1, type: 3}
   m_Name: SMG
   m_EditorClassIdentifier: 
-  fireRate: 0.1
-  damageMin: 1
-  damageMax: 2
-  bulletPrefab: {fileID: 7950197322379240446, guid: 960a3d5d76e9b9e4a96acdd6251d9276, type: 3}
+  <FireRate>k__BackingField: 0.1
+  <DamageMin>k__BackingField: 1
+  <DamageMax>k__BackingField: 2
+  <BulletPrefab>k__BackingField: {fileID: 7950197322379240446, guid: 960a3d5d76e9b9e4a96acdd6251d9276, type: 3}

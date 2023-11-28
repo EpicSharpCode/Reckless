@@ -12,7 +12,7 @@ namespace Reckless.Environment
         public void Pickup(RL_Unit unit)
         {
             if(onlyForPlayer) { if(unit is RL_Player == false) return; }
-            float addedValue = unit.GetHealth().AddValue(armorPoints);
+            float addedValue = unit.Armor.AddValue(armorPoints);
             if(addedValue > 0) Destroy(gameObject);
         }
     }
