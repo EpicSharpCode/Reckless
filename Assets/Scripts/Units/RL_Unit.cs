@@ -8,13 +8,15 @@ namespace Reckless.Unit
 {
     public class RL_Unit : MonoBehaviour
     {
-        [field:SerializeField] public RL_Unit_Parameter Health { get; private set; }
-        [field:SerializeField] public RL_Unit_Parameter Armor { get; private set; }
+        [field:SerializeField] public List<RL_Unit_Parameter> Parameters { get; private set; }
 
         private void Awake()
         {
-            Health = new RL_Unit_Parameter("Health", 100);
-            Armor = new RL_Unit_Parameter("Armor", 100);
+            Parameters = new List<RL_Unit_Parameter>()
+            {
+                new RL_Unit_Parameter("Health", 100), 
+                new RL_Unit_Parameter("Armor", 100)
+            };
         }
 
 
@@ -23,29 +25,30 @@ namespace Reckless.Unit
 
         public bool CheckDie()
         {
-            if(Health.Value == 0) {
+            if(Parameters[0].Value == 0) {
                 Destroy(gameObject);
                 return true;
             }
             return false;
         }
+
         public bool Damage(float _amount)
         {
-            while (_amount > 0)
+            if (Parameters[0].Value == 0) return false;
+            for (int i = Parameters.Count - 1; i >= 0; i--)
             {
-                if(Health.Value == 0) break;
-                var affectArmor = Armor.ReduceValue(_amount);
-                if (affectArmor > 0) _amount -= affectArmor;
-                if (affectArmor == 0)
+                var affect = Parameters[i].ReduceValue(_amount);
+                if (affect > 0)
                 {
-                    var affectHealth = Health.ReduceValue(_amount);
-                    if (affectHealth > 0) _amount -= affectHealth;
+                    _amount -= affect;
+                    if (_amount == 0) return true;
                 }
-                if(_amount <= 0.001f ) {break;}
             }
-
             CheckDie();
             return true;
         }
+
+        public RL_Unit_Parameter GetParameter(string parameterName) =>
+            Parameters.Find(x => x.ParameterName == parameterName);
     }
 }

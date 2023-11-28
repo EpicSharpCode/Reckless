@@ -7,14 +7,14 @@ namespace Reckless
     [System.Serializable]
     public class RL_Unit_Parameter
     {
-        [SerializeField] string parameterName;
+        [field:SerializeField] public string ParameterName { get; private set; }
         [field:SerializeField] public float Value { get; private set; }
         [field:SerializeField] public float MinValue { get; private set; }
         [field:SerializeField] public float MaxValue { get; private set; }
 
         public RL_Unit_Parameter(string _parameterName, float _value, float _minValue = 0, float _maxValue = 100)
         {
-            parameterName = _parameterName;
+            ParameterName = _parameterName;
             Value = _value;
             MinValue = _minValue;
             MaxValue = _maxValue;
