@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  unity: game-ci/unity@1.3.0
+  unity: game-ci/unity@1.7.0
 workflows:
   test-build-with-executors:
     jobs:
