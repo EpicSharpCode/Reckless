@@ -6,12 +6,3 @@ workflows:
     jobs:
       - unity/create-activation-file:
           editor_version: 2022.3.2f1
-      - unity/build:
-          step-name: 'Build Unity project'
-          build-target: 'StandaloneLinux64'
-          build-name: 'MyUnityProject'
-          build-method: 'BuildCommand.PerformBuild'
-          executor:
-            name: 'unity/macos'
-            editor_version: '2022.3.2f1'
-            target_platform: 'linux-il2cpp'
