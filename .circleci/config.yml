@@ -25,4 +25,4 @@ workflows:
           # if we set "compress" to false, we can play the game from
           # the CircleCI web app by going in the "Artifacts" tab.
           compress: false
-          context: cpe-unity
+          context: Unity
