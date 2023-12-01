@@ -6,3 +6,7 @@ workflows:
     jobs:
       - unity/create-activation-file:
           editor_version: 2022.3.2f1
+      - unity/build:
+          executor:
+            name: 'unity/macos'
+            editor_version: '2022.3.2f1'
