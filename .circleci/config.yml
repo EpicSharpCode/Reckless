@@ -4,5 +4,18 @@ orbs:
 workflows:
   create-unity-activation-file:
     jobs:
-      - unity/create-activation-file:
-          editor_version: 2022.3.2f1
+     - unity/build:
+          name: "build-webgl"
+          step-name: "Build WebGL"
+          executor:
+            name: "unity/ubuntu"
+            target_platform: "webgl"
+            editor_version: "2021.3.9f1"
+            resource_class: "large"
+          project-path: "src"
+          build-target: "WebGL"
+          # Since "Compression Format" is set to disabled in Unity,
+          # if we set "compress" to false, we can play the game from
+          # the CircleCI web app by going in the "Artifacts" tab.
+          compress: false
+          context: cpe-unity
