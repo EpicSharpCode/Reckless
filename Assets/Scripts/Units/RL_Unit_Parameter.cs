@@ -7,37 +7,42 @@ namespace Reckless
     [System.Serializable]
     public class RL_Unit_Parameter
     {
-        [field:SerializeField] public string ParameterName { get; private set; }
-        [field:SerializeField] public float Value { get; private set; }
-        [field:SerializeField] public float MinValue { get; private set; }
-        [field:SerializeField] public float MaxValue { get; private set; }
+        [SerializeField] string parameterName;
+        [SerializeField] float value;
+        [SerializeField] float minValue;
+        [SerializeField] float maxValue;
+
+        public string ParameterName => parameterName;
+        public float Value => value;
+        public float MinValue => minValue;
+        public float MaxValue => maxValue;
 
         public RL_Unit_Parameter(string _parameterName, float _value, float _minValue = 0, float _maxValue = 100)
         {
-            ParameterName = _parameterName;
-            Value = _value;
-            MinValue = _minValue;
-            MaxValue = _maxValue;
+            parameterName = _parameterName;
+            value = _value;
+            minValue = _minValue;
+            maxValue = _maxValue;
         }
 
         public float AddValue(float _val)
         {
             if(_val < 0) return 0;
-            if(Value == MaxValue) return 0;
-            float previousValue = Value;
-            Value += _val;
-            if(Value > MaxValue) {Value = MaxValue;}
-            return Value - previousValue;
+            if(value == maxValue) return 0;
+            float previousValue = value;
+            value += _val;
+            if(value > maxValue) {value = maxValue;}
+            return value - previousValue;
         }
         
         public float ReduceValue(float _val)
         {
             if(_val < 0) return 0;
-            if(Value == MinValue) return 0;
-            float previousValue = Value;
-            Value -= _val;
-            if(Value < MinValue) {Value = MinValue;}
-            return previousValue - Value;
+            if(value == minValue) return 0;
+            float previousValue = value;
+            value -= _val;
+            if(value < minValue) {value = minValue;}
+            return previousValue - value;
         }
 
     }

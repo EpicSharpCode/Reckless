@@ -132,11 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cc1c4498b97bb4c9c43c68a8eb901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 0
-  maxArmor: 100
-  armor: 0
-  goal: {fileID: 0}
+  <Parameters>k__BackingField: []
+  <Goal>k__BackingField: {fileID: 0}
+  <Abilities>k__BackingField:
+  - {fileID: 11400000, guid: 900157e51bc0743f3b0b1d8912d55ed8, type: 2}
 --- !u!114 &760757960849622333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 760757960849622331}
+  patrolingPoints: []
 --- !u!114 &760757960849622320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +194,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760757960849622330}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.9
   m_Height: 2.5428295
   m_Direction: 1

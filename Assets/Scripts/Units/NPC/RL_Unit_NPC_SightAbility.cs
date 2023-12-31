@@ -18,7 +18,7 @@ namespace Reckless.Unit.AI
             List<RL_Unit> foundedUnits = new List<RL_Unit>();
             for(float i = -AbilityValue/2; i < AbilityValue/2; i++)
             {
-                var found = RaycastAngle(_thisUnit, i);
+                var found = RaycastAngle(_thisUnit, i, true);
                 if(found == null) continue;
                 if(foundedUnits.Contains(found)) continue;
                 foundedUnits.Add(found);
@@ -29,11 +29,11 @@ namespace Reckless.Unit.AI
 
         public RL_Unit RaycastAngle(RL_Unit _thisUnit, float _angle, bool debug = false)
         {
-            var direction = Quaternion.AngleAxis(_angle, _thisUnit.transform.right) * _thisUnit.transform.forward;
+            var direction = Quaternion.AngleAxis(_angle, _thisUnit.transform.up) * _thisUnit.transform.forward;
             Ray ray = new Ray(_thisUnit.transform.position, direction);
             if (debug)
             {
-                Debug.DrawRay(_thisUnit.transform.position, direction);
+                Debug.DrawRay(_thisUnit.transform.position, direction, Color.red,1);
                 return null;
             }
 

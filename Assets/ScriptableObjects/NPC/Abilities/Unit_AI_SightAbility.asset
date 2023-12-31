@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323a0614f9e0b4400ab9739222e77bef, type: 3}
   m_Name: Unit_AI_SightAbility
   m_EditorClassIdentifier: 
-  abilityName: Sight
-  abilityValue: 0
+  <AbilityName>k__BackingField: SightAbiity
+  <AbilityValue>k__BackingField: 90
   unitsInSight: []
