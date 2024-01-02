@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: WeaponsDatabase
   m_EditorClassIdentifier: 
   weapons:
-  - <ItemName>k__BackingField: Pistol
-    <LocalizedName>k__BackingField: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
-    <Value>k__BackingField: 1
-    <WeaponPrefrence>k__BackingField: {fileID: 0}
-  - <ItemName>k__BackingField: SMG
-    <LocalizedName>k__BackingField: "\u041F\u041F"
-    <Value>k__BackingField: 1
-    <WeaponPrefrence>k__BackingField: {fileID: 0}
+  - itemName: Pistol
+    itemID: Weapon_Pistol
+    localizedName: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
+    value: 1
+    weaponPrefrence: {fileID: 11400000, guid: c51b4617222434d4c9e334d4ebd8f786, type: 2}
+  - itemName: SMG
+    itemID: Weapon_SMG
+    localizedName: SMG
+    value: 10
+    weaponPrefrence: {fileID: 11400000, guid: 7bd750b553596eb42899b9fa8997bc46, type: 2}

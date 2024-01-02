@@ -1,19 +1,20 @@
 using Reckless.Unit;
+using Reckless.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Reckless.Environment
+namespace Reckless.Entities 
 {
-    public class RL_ArmorPack : MonoBehaviour, RL_IPickupable
+    public class RL_ParameterPack : MonoBehaviour, RL_IPickupable
     {
-        [SerializeField] float armorPoints = 10;
-        [SerializeField] string parameterName = "Armor";
+        [SerializeField] float healthPoints = 10;
+        [SerializeField] string parameterName = "Health";
         [SerializeField] private bool onlyForPlayer = true;
         public void Pickup(RL_Unit unit)
         {
             if(onlyForPlayer) { if(unit is RL_Player == false) return; }
-            float addedValue = unit.GetParameter(parameterName).AddValue(armorPoints);
+            float addedValue = unit.GetParameter(parameterName)?.AddValue(healthPoints) ?? 0;
             if(addedValue > 0) Destroy(gameObject);
         }
     }

@@ -1,7 +1,5 @@
-using Reckless.Environment;
-using Reckless.UI;
-using System.Collections;
 using System.Collections.Generic;
+using Reckless.Entities;
 using UnityEngine;
 
 namespace Reckless.Unit
@@ -13,6 +11,15 @@ namespace Reckless.Unit
         {
             var pickupble = other.gameObject.GetComponent<RL_IPickupable>();
             if (pickupble != null) { pickupble.Pickup(this); }
+        }
+        public override void InitParameters()
+        {
+            
+            Parameters = new List<RL_Unit_Parameter>()
+            {
+                new("Health", 1000, 0, 1000), 
+                new("Armor", 0)
+            };
         }
     }
 }

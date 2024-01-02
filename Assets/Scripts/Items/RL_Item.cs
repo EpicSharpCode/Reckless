@@ -1,20 +1,19 @@
-using Reckless.Environment;
 using Reckless.Unit;
-using System.Collections;
-using System.Collections.Generic;
+using Reckless.Entities;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Reckless.Items
 {
     public class RL_Item : MonoBehaviour, RL_IPickupable
     {
         [SerializeField] internal TMP_Text itemText;
-        [SerializeField] internal string itemName;
+        [SerializeField] internal string itemID;
         
         RL_ItemObject itemObject;
 
-        private void Start() => Setup(itemName);
+        private void Start() => Setup(itemID);
 
         public virtual void Setup(string _itemName) 
         { 

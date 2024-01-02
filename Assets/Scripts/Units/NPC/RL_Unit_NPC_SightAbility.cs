@@ -8,6 +8,7 @@ namespace Reckless.Unit.AI
     public class RL_Unit_NPC_SightAbility : RL_Unit_NPC_Ability
     {
         [SerializeField] List<RL_Unit> unitsInSight;
+        [SerializeField] Vector3 scanOffset;
         public override void PerformUpdateAction(RL_Unit _thisUnit)
         {
             unitsInSight = ScanForUnits(_thisUnit);
@@ -30,10 +31,11 @@ namespace Reckless.Unit.AI
         public RL_Unit RaycastAngle(RL_Unit _thisUnit, float _angle, bool debug = false)
         {
             var direction = Quaternion.AngleAxis(_angle, _thisUnit.transform.up) * _thisUnit.transform.forward;
-            Ray ray = new Ray(_thisUnit.transform.position, direction);
+            var origin = _thisUnit.transform.position + scanOffset;
+            Ray ray = new Ray(origin, direction);
             if (debug)
             {
-                Debug.DrawRay(_thisUnit.transform.position, direction, Color.red,1);
+                Debug.DrawRay(origin, direction, Color.red,1);
                 return null;
             }
 

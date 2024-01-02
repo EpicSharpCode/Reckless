@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Reckless
+namespace Reckless.Entities
 {
     public class RL_Bullet : MonoBehaviour
     {

@@ -9,11 +9,12 @@ namespace Reckless.Items
     [System.Serializable]
     public class RL_WeaponObject : RL_ItemObject
     {
-        [field:SerializeField] public RL_WeaponPreference WeaponPrefrence { get; private set; }
+        [SerializeField] RL_WeaponPreference weaponPrefrence;
+        public RL_WeaponPreference WeaponPrefrence => weaponPrefrence;
 
         public RL_WeaponObject(RL_WeaponObject _weaponObject) : base(_weaponObject)
         {
-            WeaponPrefrence = _weaponObject.WeaponPrefrence;
+            weaponPrefrence = _weaponObject.weaponPrefrence;
         }
     }
 }

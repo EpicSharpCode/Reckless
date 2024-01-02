@@ -17,7 +17,7 @@ namespace Reckless
             instance = this;
         }
 
-        public static RL_ItemObject GetItem(string _name) => instance.itemsDatabase.GetItem(_name);
-        public static RL_WeaponObject GetWeapon(string _name) => instance.weaponsDatabase.GetWeapon(_name);
+        public static RL_ItemObject GetItem(string _ID) => instance.itemsDatabase.GetItem(_ID);
+        public static RL_WeaponObject GetWeapon(string _ID) => instance.weaponsDatabase.GetWeapon(_ID);
     }
 }

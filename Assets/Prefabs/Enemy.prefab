@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cc1c4498b97bb4c9c43c68a8eb901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Parameters>k__BackingField: []
+  parameters: []
   <Goal>k__BackingField: {fileID: 0}
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 900157e51bc0743f3b0b1d8912d55ed8, type: 2}

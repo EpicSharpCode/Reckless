@@ -1,9 +1,4 @@
 using Reckless.Unit;
-using Reckless.Weapon;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
-using UnityEngine;
 
 namespace Reckless.Items
 {

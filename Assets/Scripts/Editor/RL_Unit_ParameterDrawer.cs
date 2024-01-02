@@ -16,12 +16,13 @@ namespace Reckless.Editor
 
             EditorGUI.BeginProperty(position, label, property);
 
-            Rect parameterNameRect = new Rect(position.x, position.y, 100, position.height);
-            Rect valueRect = new Rect(parameterNameRect.x + parameterNameRect.width + 10, parameterNameRect.y, 100, parameterNameRect.height);
+            Rect parameterNameRect = new Rect(position.x, position.y, 50, position.height);
+            Rect valueRect = new Rect(parameterNameRect.x + parameterNameRect.width + 10, parameterNameRect.y, 150, parameterNameRect.height);
             
             GUI.Label(parameterNameRect,parameterName.stringValue);
-            GUI.Label(valueRect, $"{System.Math.Round(value.floatValue,1)} / " +
-                                  $"{System.Math.Round(maxValue.floatValue,1)}");
+            GUI.Label(valueRect, $"{System.Math.Round(value.floatValue / maxValue.floatValue * 100)}%\t"
+                                 + $"({System.Math.Round(value.floatValue, 1)}/" +
+                                 $"{System.Math.Round(maxValue.floatValue, 1)})");
             
             
             EditorGUI.EndProperty();

@@ -1,4 +1,3 @@
-using Reckless.Environment;
 using Reckless.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,14 +7,24 @@ namespace Reckless.Unit
 {
     public class RL_Unit : MonoBehaviour
     {
-        [field:SerializeField] public List<RL_Unit_Parameter> Parameters { get; private set; }
+        [NonReorderable] [SerializeField] List<RL_Unit_Parameter> parameters;
+        public List<RL_Unit_Parameter> Parameters
+        {
+            get { return parameters; }
+            protected set { parameters = value; }
+        }
 
         private void Awake()
+        {
+            InitParameters();
+        }
+
+        public virtual void InitParameters()
         {
             Parameters = new List<RL_Unit_Parameter>()
             {
                 new RL_Unit_Parameter("Health", 100), 
-                new RL_Unit_Parameter("Armor", 100)
+                new RL_Unit_Parameter("Armor", 0)
             };
         }
 

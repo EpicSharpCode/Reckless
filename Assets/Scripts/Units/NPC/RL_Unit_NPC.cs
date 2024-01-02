@@ -8,13 +8,24 @@ namespace Reckless.Unit.AI
     public class RL_Unit_NPC : RL_Unit
     {
         [field:Header("NPC Settings")]
-        [field:SerializeField] public RL_Unit Goal { get; private set; }
 
-        [field:SerializeField] public List<RL_Unit_NPC_Ability> Abilities { get; private set; }
+        [SerializeField] List<RL_Unit_NPC_AbilityWithWraper> abilities;
+        [SerializeField] RL_Unit goal;
+
+        public RL_Unit Goal => goal;
+        public List<RL_Unit_NPC_AbilityWithWraper> Abilities => abilities;
 
         private void Update()
         {
-            Abilities.ForEach(x => x.PerformUpdateAction(GetComponent<RL_Unit>()));
+            Abilities.ForEach(x => x.Ability.PerformUpdateAction(GetComponent<RL_Unit>()));
+        }
+
+        public override void InitParameters()
+        {
+            Parameters = new List<RL_Unit_Parameter>()
+            {
+                new RL_Unit_Parameter("Health", 100)
+            };
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Reckless.Environment
+namespace Reckless.Entities
 {
     public interface RL_IPickupable
     {
