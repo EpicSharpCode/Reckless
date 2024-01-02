@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323a0614f9e0b4400ab9739222e77bef, type: 3}
   m_Name: Unit_AI_SightAbility
   m_EditorClassIdentifier: 
-  <AbilityName>k__BackingField: SightAbiity
-  <AbilityValue>k__BackingField: 90
+  abilityName: Sight
+  abilityValue: 130
   unitsInSight: []
+  scanOffset: {x: 0, y: 1, z: 0}

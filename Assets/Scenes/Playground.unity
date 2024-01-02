@@ -2277,6 +2277,10 @@ PrefabInstance:
       value: Weapon_SMG
       objectReference: {fileID: 0}
     - target: {fileID: 7674689788084779141, guid: ffa38e1482164ad45832cfb45a9f7b73, type: 3}
+      propertyPath: itemID
+      value: Weapon_SMG
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674689788084779141, guid: ffa38e1482164ad45832cfb45a9f7b73, type: 3}
       propertyPath: itemName
       value: SMG
       objectReference: {fileID: 0}
@@ -2619,6 +2623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 7674689788084779141, guid: ffa38e1482164ad45832cfb45a9f7b73, type: 3}
+      propertyPath: itemID
+      value: Weapon_Pistol
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2827,8 +2835,12 @@ PrefabInstance:
       value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 9119336801289167677, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
+      propertyPath: itemID
+      value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119336801289167677, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
       propertyPath: itemName
-      value: Test
+      value: Apple
       objectReference: {fileID: 0}
     - target: {fileID: 9119336801289167678, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
       propertyPath: m_RootOrder
