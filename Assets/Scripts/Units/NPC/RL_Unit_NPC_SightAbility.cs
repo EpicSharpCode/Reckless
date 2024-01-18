@@ -7,6 +7,9 @@ namespace Reckless.Unit.AI
     [CreateAssetMenu(fileName = "Unit_AI_SightAbility", menuName = "Reckless/AI/Abilities/Sight Ability")]
     public class RL_Unit_NPC_SightAbility : RL_Unit_NPC_Ability
     {
+        public List<RL_Unit> UnitsInSight => unitsInSight;
+
+        [SerializeField] float sightAngle = 0;
         [SerializeField] List<RL_Unit> unitsInSight;
         [SerializeField] Vector3 scanOffset;
         public override void PerformUpdateAction(RL_Unit _thisUnit)

@@ -17,7 +17,7 @@ namespace Reckless.Unit.AI
 
         private void Update()
         {
-            Abilities.ForEach(x => x.Ability.PerformUpdateAction(GetComponent<RL_Unit>()));
+            Abilities.ForEach(x => x.Ability.PerformUpdateAction(this));
         }
 
         public override void InitParameters()

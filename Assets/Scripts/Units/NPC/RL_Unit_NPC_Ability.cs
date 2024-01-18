@@ -4,14 +4,8 @@ using UnityEngine;
 
 namespace Reckless.Unit.AI
 {
-    public class RL_Unit_NPC_Ability : ScriptableObject
+    public abstract class RL_Unit_NPC_Ability : MonoBehaviour
     {
-        public string AbilityName => abilityName;
-        public float AbilityValue => abilityValue;
-        
-        [SerializeField] string abilityName;
-        [SerializeField] float abilityValue;
-
         public virtual void PerformUpdateAction(RL_Unit _thisUnit) {}
     }
 }

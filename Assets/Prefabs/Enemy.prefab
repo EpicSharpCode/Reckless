@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 760757960849622334}
   - component: {fileID: 760757960849622333}
   - component: {fileID: 760757960849622320}
+  - component: {fileID: 392714644403199277}
   - component: {fileID: 760757960849622331}
   - component: {fileID: 760757960849622321}
   m_Layer: 0
@@ -133,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameters: []
-  <Goal>k__BackingField: {fileID: 0}
-  <Abilities>k__BackingField:
-  - {fileID: 11400000, guid: 900157e51bc0743f3b0b1d8912d55ed8, type: 2}
+  abilities:
+  - ability: {fileID: 392714644403199277}
+  goal: {fileID: 0}
 --- !u!114 &760757960849622333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +165,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPreference: {fileID: 11400000, guid: c51b4617222434d4c9e334d4ebd8f786, type: 2}
   weaponYOffset: 1
+--- !u!114 &392714644403199277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760757960849622330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323a0614f9e0b4400ab9739222e77bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: 
+  abilityValue: 0
+  unitsInSight: []
+  scanOffset: {x: 0, y: 0, z: 0}
 --- !u!195 &760757960849622331
 NavMeshAgent:
   m_ObjectHideFlags: 0
