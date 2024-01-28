@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Reckless.Unit.AI
 {
-    [CreateAssetMenu(fileName = "Unit_AI_SightAbility", menuName = "Reckless/AI/Abilities/Sight Ability")]
     public class RL_Unit_NPC_SightAbility : RL_Unit_NPC_Ability
     {
         public List<RL_Unit> UnitsInSight => unitsInSight;
@@ -12,17 +11,17 @@ namespace Reckless.Unit.AI
         [SerializeField] float sightAngle = 0;
         [SerializeField] List<RL_Unit> unitsInSight;
         [SerializeField] Vector3 scanOffset;
-        public override void PerformUpdateAction(RL_Unit _thisUnit)
+        public override void PerformUpdate(RL_Unit_NPC _npc)
         {
-            unitsInSight = ScanForUnits(_thisUnit);
+            unitsInSight = ScanForUnits(_npc);
         }
 
-        public List<RL_Unit> ScanForUnits(RL_Unit _thisUnit)
+        public List<RL_Unit> ScanForUnits(RL_Unit _unit)
         {
             List<RL_Unit> foundedUnits = new List<RL_Unit>();
-            for(float i = -AbilityValue/2; i < AbilityValue/2; i++)
+            for(float i = -sightAngle/2; i < sightAngle/2; i++)
             {
-                var found = RaycastAngle(_thisUnit, i, true);
+                var found = RaycastAngle(_unit, i, true);
                 if(found == null) continue;
                 if(foundedUnits.Contains(found)) continue;
                 foundedUnits.Add(found);
@@ -31,12 +30,12 @@ namespace Reckless.Unit.AI
             return foundedUnits;
         }
 
-        public RL_Unit RaycastAngle(RL_Unit _thisUnit, float _angle, bool debug = false)
+        public RL_Unit RaycastAngle(RL_Unit _unit, float _angle, bool _debug = false)
         {
-            var direction = Quaternion.AngleAxis(_angle, _thisUnit.transform.up) * _thisUnit.transform.forward;
-            var origin = _thisUnit.transform.position + scanOffset;
+            var direction = Quaternion.AngleAxis(_angle, _unit.transform.up) * _unit.transform.forward;
+            var origin = _unit.transform.position + scanOffset;
             Ray ray = new Ray(origin, direction);
-            if (debug)
+            if (_debug)
             {
                 Debug.DrawRay(origin, direction, Color.red,1);
                 return null;

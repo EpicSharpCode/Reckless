@@ -6,23 +6,26 @@ using UnityEngine.AI;
 
 namespace Reckless.Unit.AI 
 {
-    public class RL_Unit_NPC_Movement : MonoBehaviour
+    public class RL_Unit_NPC_MovementAbility : RL_Unit_NPC_Ability
     {
         [SerializeField] NavMeshAgent agent;
-        [SerializeField] List<Transform> patrolingPoints;
+        [SerializeField] List<Transform> patrollingPoints;
 
         RL_Unit_NPC thisNPC;
 
-        private void Awake()
+        void Awake()
         {
             thisNPC = GetComponent<RL_Unit_NPC>();
         }
 
-
-        void Update()
+        public override void Idle() { agent.isStopped = true; }
+        public override void Pursuit()
         {
             if (thisNPC?.Goal == null) return;
             agent.SetDestination(thisNPC.Goal.transform.position);
+            agent.isStopped = false;
         }
+        public override void Attack() { }
+        public override void Defence() { }
     }
 }
