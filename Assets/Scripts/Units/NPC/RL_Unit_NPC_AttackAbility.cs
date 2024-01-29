@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Reckless.Unit.AI
 {
-    public class RL_Unit_NPC_Belt : MonoBehaviour
+    public class RL_Unit_NPC_AttackAbility : RL_Unit_NPC_Ability
     {
         [SerializeField] RL_WeaponPreference weaponPreference;
         [SerializeField] float weaponYOffset = 1;
@@ -14,13 +14,16 @@ namespace Reckless.Unit.AI
 
         Coroutine makeFireCorutine = null;
 
-        private void Awake()
+        void Awake()
         {
             thisNPC = GetComponent<RL_Unit_NPC>();
         }
 
-        // Update is called once per frame
-        void Update()
+        public override void Attack() => MakeFireUpdate();
+        public override void AttackAndPursuit() => MakeFireUpdate();
+
+
+        void MakeFireUpdate()
         {
             if (makeFireCorutine != null) { return; }
             makeFireCorutine = StartCoroutine(MakeFire());
@@ -47,7 +50,7 @@ namespace Reckless.Unit.AI
             bullet.transform.position = weaponOrigin + direction;
             bullet.Setup(Random.Range(weaponPreference.DamageMin, weaponPreference.DamageMax));
 
-            bullet.GetComponent<Rigidbody>().AddForce(direction * 1000);
+            bullet.GetComponent<Rigidbody>().AddForce(direction * RL_Game_Variables.DefaultBulletPower);
 
             yield return new WaitForSeconds(weaponPreference.FireRate);
             makeFireCorutine = null;

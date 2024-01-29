@@ -12,6 +12,7 @@ namespace Reckless.Unit.AI
         public void Idle();
         public void Patrolling();
         public void Pursuit();
+        public void AttackAndPursuit();
         public void Attack();
         public void Defence();
     }

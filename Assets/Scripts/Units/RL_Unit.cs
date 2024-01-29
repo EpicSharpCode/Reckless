@@ -7,21 +7,14 @@ namespace Reckless.Unit
 {
     public class RL_Unit : MonoBehaviour
     {
-        [NonReorderable] [SerializeField] List<RL_Unit_Parameter> parameters;
-        public List<RL_Unit_Parameter> Parameters
-        {
-            get { return parameters; }
-            protected set { parameters = value; }
-        }
+        [NonReorderable] [SerializeField] protected List<RL_Unit_Parameter> parameters;
+        public List<RL_Unit_Parameter> Parameters => parameters;
 
-        private void Awake()
-        {
-            InitParameters();
-        }
+        void Awake() => InitParameters();
 
         public virtual void InitParameters()
         {
-            Parameters = new List<RL_Unit_Parameter>()
+            parameters = new List<RL_Unit_Parameter>()
             {
                 new RL_Unit_Parameter("Health", 100), 
                 new RL_Unit_Parameter("Armor", 0)

@@ -17,22 +17,17 @@ namespace Reckless.Unit.AI
         [SerializeField] RL_Unit goal;
         public RL_Unit Goal => goal;
         public List<RL_Unit_NPC_AbilityWithWraper> Abilities => abilities;
+        
 
-        void Start()
-        {
-            Abilities.ForEach(x => x.Ability.PerformStart(this));
-        }
-
-        void Update()
-        {
-            Abilities.ForEach(x => x.Ability.PerformUpdate(this));
-        }
+        void Start() => Abilities.ForEach(x => x.Ability.PerformStart(this));
+        void Update() => Abilities.ForEach(x => x.Ability.PerformUpdate(this));
 
         public enum NPC_State
         {
             Idle,
             Patrolling,
             Pursuit,
+            AttackAndPursuit,
             Attack,
             Defence
         }

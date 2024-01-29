@@ -7,7 +7,6 @@ namespace Reckless.Unit.AI
     public abstract class RL_Unit_NPC_Ability : MonoBehaviour, RL_Unit_NPC_IAbility
     {
         #region MonoBehavior
-
         
         public virtual void PerformStart(RL_Unit_NPC _npc) { }
         public virtual void PerformUpdate(RL_Unit_NPC _npc)
@@ -34,6 +33,11 @@ namespace Reckless.Unit.AI
                     Attack();
                     break;
                 }
+                case RL_Unit_NPC.NPC_State.AttackAndPursuit:
+                {
+                    AttackAndPursuit();
+                    break;
+                }
                 case RL_Unit_NPC.NPC_State.Defence :
                 {
                     Defence();
@@ -43,11 +47,16 @@ namespace Reckless.Unit.AI
         }
 
         #endregion
+
+        #region Ability state methods
         
         public virtual void Idle() { }
         public virtual void Patrolling() { }
         public virtual void Pursuit() { }
         public virtual void Attack() { }
+        public virtual void AttackAndPursuit() { }
         public virtual void Defence() { }
+        
+        #endregion
     }
 }

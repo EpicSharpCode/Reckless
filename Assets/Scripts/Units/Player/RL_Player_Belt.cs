@@ -65,7 +65,7 @@ namespace Reckless.Unit
                 bullet.transform.position = weaponOrigin + direction;
                 bullet.Setup(Random.Range(weaponPreference.DamageMin, weaponPreference.DamageMax));
 
-                bullet.GetComponent<Rigidbody>().AddForce(direction * 1000);
+                bullet.GetComponent<Rigidbody>().AddForce(direction * RL_Game_Variables.DefaultBulletPower);
 
 
             }

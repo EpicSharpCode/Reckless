@@ -136,6 +136,9 @@ MonoBehaviour:
   parameters: []
   abilities:
   - ability: {fileID: 392714644403199277}
+  - ability: {fileID: 760757960849622333}
+  - ability: {fileID: 760757960849622320}
+  npcState: 0
   goal: {fileID: 0}
 --- !u!114 &760757960849622333
 MonoBehaviour:
@@ -150,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 760757960849622331}
-  patrolingPoints: []
+  patrollingPoints: []
 --- !u!114 &760757960849622320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323a0614f9e0b4400ab9739222e77bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: 
-  abilityValue: 0
+  sightAngle: 0
   unitsInSight: []
   scanOffset: {x: 0, y: 0, z: 0}
 --- !u!195 &760757960849622331

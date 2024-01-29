@@ -17,7 +17,7 @@ namespace Reckless.Items
 
         public virtual void Setup(string _itemName) 
         { 
-            itemObject = RL_GlobalVariables.GetItem(_itemName);
+            itemObject = RL_Game_Variables.GetItem(_itemName);
             itemText.text = itemObject.LocalizedName;
         }
 

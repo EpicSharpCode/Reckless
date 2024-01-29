@@ -13,11 +13,8 @@ namespace Reckless.Editor
             var abilityProperty = property.FindPropertyRelative("ability");
 
             EditorGUI.BeginProperty(position, label, property);
-
             Rect abilityRect = new Rect(position.x, position.y, position.width, position.height);
-
             EditorGUI.PropertyField(abilityRect, abilityProperty, GUIContent.none);
-            
             
             EditorGUI.EndProperty();
         }

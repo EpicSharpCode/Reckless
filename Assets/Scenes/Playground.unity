@@ -284,8 +284,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1780671832}
-        m_TargetAssemblyTypeName: Hotline.UI.HL_UI_Controller, Assembly-CSharp
-        m_MethodName: ShowScreen
+        m_TargetAssemblyTypeName: Reckless.UI.RL_UI_Controller, Assembly-CSharp
+        m_MethodName: ShowView
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -522,8 +522,11 @@ GameObject:
   m_Component:
   - component: {fileID: 331889774}
   - component: {fileID: 331889775}
+  - component: {fileID: 331889777}
+  - component: {fileID: 331889776}
+  - component: {fileID: 331889778}
   m_Layer: 5
-  m_Name: HL_UI_SettingsScreen
+  m_Name: View - Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,10 +562,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 331889773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5a98494b553d4743ae0b5542353f13b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1030923bf83ceac4ba1fe4996821263b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ScreenName>k__BackingField: Settings
+--- !u!225 &331889776
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331889773}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!223 &331889777
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331889773}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &331889778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331889773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &338405309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,7 +1494,7 @@ GameObject:
   - component: {fileID: 1083853251}
   - component: {fileID: 1083853250}
   m_Layer: 0
-  m_Name: HL_GlobalVariables
+  m_Name: RL_Game_Variables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,6 +1514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsDatabase: {fileID: 11400000, guid: ba9572c47d910074aa50397398aa0a59, type: 2}
   weaponsDatabase: {fileID: 11400000, guid: fea982c24eacede41a9715e9181ac0d8, type: 2}
+  defaultBulletPower: 1000
 --- !u!4 &1083853251
 Transform:
   m_ObjectHideFlags: 0
@@ -1600,6 +1655,10 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 2073440629}
+    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: npcState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: <Goal>k__BackingField
       value: 
@@ -1918,8 +1977,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1780671832}
-        m_TargetAssemblyTypeName: Hotline.UI.HL_UI_Controller, Assembly-CSharp
-        m_MethodName: ShowScreen
+        m_TargetAssemblyTypeName: Reckless.UI.RL_UI_Controller, Assembly-CSharp
+        m_MethodName: ShowView
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1977,8 +2036,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1593025064}
   - component: {fileID: 1593025065}
+  - component: {fileID: 1593025067}
+  - component: {fileID: 1593025066}
+  - component: {fileID: 1593025068}
   m_Layer: 5
-  m_Name: HL_UI_GameScreen
+  m_Name: View - Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2015,32 +2077,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593025063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4da0b4ea5a7094d8ccd351055de9b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1030923bf83ceac4ba1fe4996821263b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ScreenName>k__BackingField: Game
---- !u!114 &1595092520 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 392714644403199277, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-  m_PrefabInstance: {fileID: 760757961638271928}
+--- !u!225 &1593025066
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1593025063}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!223 &1593025067
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593025063}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &1593025068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593025063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323a0614f9e0b4400ab9739222e77bef, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1595092522 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 760757960849622333, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-  m_PrefabInstance: {fileID: 760757961638271928}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f053133406ae4d14085375bdff0807eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,7 +2295,7 @@ GameObject:
   - component: {fileID: 1780671833}
   - component: {fileID: 1780671832}
   m_Layer: 0
-  m_Name: HL_UI_Controller
+  m_Name: RL_UI_Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2222,11 +2313,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b111dab53349fec46824f078251441ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScreen: {fileID: 0}
-  defaultScreenName: Game
-  screens:
-  - {fileID: 1593025065}
-  - {fileID: 331889775}
+  views:
+  - viewName: Game
+    view: {fileID: 1593025065}
+    showByDefault: 1
+  - viewName: Settings
+    view: {fileID: 331889775}
+    showByDefault: 0
 --- !u!4 &1780671833
 Transform:
   m_ObjectHideFlags: 0
@@ -2516,38 +2609,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 760757960849622330, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: goal
       value: 
       objectReference: {fileID: 2073440629}
     - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: npcState
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: abilities.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: <Goal>k__BackingField
-      value: 
-      objectReference: {fileID: 2073440629}
-    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: abilities.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 900157e51bc0743f3b0b1d8912d55ed8, type: 2}
-    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: abilities.Array.data[0].ability
-      value: 
-      objectReference: {fileID: 1595092522}
-    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: abilities.Array.data[1].ability
-      value: 
-      objectReference: {fileID: 1595092520}
     - target: {fileID: 760757960849622335, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: m_RootOrder
       value: 17

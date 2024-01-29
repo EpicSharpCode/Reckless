@@ -19,13 +19,14 @@ namespace Reckless.Unit.AI
         }
 
         public override void Idle() { agent.isStopped = true; }
-        public override void Pursuit()
+        public override void Pursuit() => GoToGoal();
+        public override void AttackAndPursuit() => GoToGoal();
+
+        void GoToGoal()
         {
             if (thisNPC?.Goal == null) return;
             agent.SetDestination(thisNPC.Goal.transform.position);
             agent.isStopped = false;
         }
-        public override void Attack() { }
-        public override void Defence() { }
     }
 }
