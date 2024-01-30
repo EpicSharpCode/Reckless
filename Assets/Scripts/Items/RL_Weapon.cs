@@ -11,9 +11,10 @@ namespace Reckless.Items
             weaponObject = _weaponObject;
         }
 
-        public override void Setup(string _itemName)
+        public override void Setup(int _itemIndex)
         {
-            weaponObject = RL_Game_Variables.GetWeapon(_itemName);
+            if(_itemIndex < 0) return;
+            weaponObject = RL_Game_Variables.GetWeapon(_itemIndex - 1);
             itemText.text = weaponObject.LocalizedName;
         }
         public override void Pickup(RL_Unit player)

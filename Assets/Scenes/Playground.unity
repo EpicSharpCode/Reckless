@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsDatabase: {fileID: 11400000, guid: ba9572c47d910074aa50397398aa0a59, type: 2}
   weaponsDatabase: {fileID: 11400000, guid: fea982c24eacede41a9715e9181ac0d8, type: 2}
-  defaultBulletPower: 1000
+  defaultBulletPower: 3000
 --- !u!4 &1083853251
 Transform:
   m_ObjectHideFlags: 0
@@ -2399,6 +2399,10 @@ PrefabInstance:
       propertyPath: itemName
       value: SMG
       objectReference: {fileID: 0}
+    - target: {fileID: 7674689788084779141, guid: ffa38e1482164ad45832cfb45a9f7b73, type: 3}
+      propertyPath: selectedItemIndex
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2726,6 +2730,10 @@ PrefabInstance:
       propertyPath: itemID
       value: Weapon_Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 7674689788084779141, guid: ffa38e1482164ad45832cfb45a9f7b73, type: 3}
+      propertyPath: selectedItemIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2929,17 +2937,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3997512141059390651, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
+      propertyPath: selectedItemIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9119336801289167668, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
       propertyPath: m_Name
       value: Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119336801289167677, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
-      propertyPath: itemID
-      value: Apple
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119336801289167677, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
-      propertyPath: itemName
-      value: Apple
       objectReference: {fileID: 0}
     - target: {fileID: 9119336801289167678, guid: 932d72bf7c6402045a25631b453977cc, type: 3}
       propertyPath: m_RootOrder

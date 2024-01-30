@@ -2,10 +2,10 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace UnityParallaxLibrary.EditorExtension
+namespace Reckless.EditorExtension
 {
-    [CustomEditor(typeof(Object), editorForChildClasses:true)]
-    public class RL_Editor_ObjectEditor : Editor
+    [CustomEditor(typeof(MonoBehaviour), editorForChildClasses:true)]
+    public class RL_Editor_MonoBehaviourEditor : Editor
     {
         public override void OnInspectorGUI()
         {

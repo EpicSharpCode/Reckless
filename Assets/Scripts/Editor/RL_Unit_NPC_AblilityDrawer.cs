@@ -3,7 +3,7 @@ using Reckless.Unit.AI;
 using UnityEditor;
 using UnityEngine;
 
-namespace Reckless.Editor
+namespace Reckless.EditorExtension
 {
     [CustomPropertyDrawer(typeof(RL_Unit_NPC_AbilityWithWraper))]
     public class RL_Unit_NPC_AbilityDrawer : PropertyDrawer

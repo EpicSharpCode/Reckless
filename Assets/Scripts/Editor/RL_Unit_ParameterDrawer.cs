@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Reckless.Editor
+namespace Reckless.EditorExtension
 {
     [CustomPropertyDrawer(typeof(RL_Unit_Parameter))]
     public class RL_Unit_ParameterDrawer : PropertyDrawer

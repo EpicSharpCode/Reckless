@@ -10,5 +10,7 @@ namespace Reckless.Items
         [SerializeField] List<RL_ItemObject> items;
 
         public RL_ItemObject GetItem(string _ID) => new (items.Find(x => x.itemID == _ID));
+        public RL_ItemObject GetItem(int _index) => new (items[_index]);
+        public List<RL_ItemObject> GetAllItems() => items;
     }
 }
