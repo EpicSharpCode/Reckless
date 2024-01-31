@@ -15,4 +15,5 @@ MonoBehaviour:
   fireRate: 2
   damageMin: 10
   damageMax: 15
+  bulletPower: 3000
   bulletPrefab: {fileID: 7950197322379240446, guid: 960a3d5d76e9b9e4a96acdd6251d9276, type: 3}

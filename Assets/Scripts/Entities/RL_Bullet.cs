@@ -27,22 +27,29 @@ namespace Reckless.Entities
             var raycastHits = Physics.RaycastAll(ray, Vector3.Distance(previousPos, transform.position));
             foreach (var hit in raycastHits)
             {
-                TryDamage(hit.transform.gameObject);
+                TryDamage(hit);
             }
             previousPos = transform.position;
         }
 
-        private void TryDamage(GameObject hit)
+        private void TryDamage(RaycastHit hit)
         {
             if(damage == 0) return;
-            if(hit.gameObject.GetComponent<RL_Bullet>() != null) return;
+            if(hit.collider.GetComponent<RL_Bullet>() != null) return;
             
-            Debug.Log($"Collided with {hit.gameObject.name}");
-            var unit = hit.gameObject.GetComponent<RL_Unit>();
+            var unit = hit.collider.GetComponent<RL_Unit>();
             unit?.Damage(damage);
+            if (RL_Game_Variables.HitBoxPopupState)
+            {
+                var hitPopup = Instantiate(RL_Game_Variables.GamePrefabDatabase.HitPopupPrefab) as RL_HitPopup;
+                hitPopup.transform.position = hit.point;
+                hitPopup.Setup(damage);
+            }
             damage = 0;
+            GetComponent<Rigidbody>().isKinematic = true;
+            transform.position = hit.point;
             
-            StartCoroutine(DestroyBullet(0f));
+            StartCoroutine(DestroyBullet(0.2f));
         }
 
         IEnumerator DestroyBullet(float _sec)

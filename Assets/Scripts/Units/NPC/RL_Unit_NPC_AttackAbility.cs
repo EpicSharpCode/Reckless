@@ -50,7 +50,7 @@ namespace Reckless.Unit.AI
             bullet.transform.position = weaponOrigin + direction;
             bullet.Setup(Random.Range(weaponPreference.DamageMin, weaponPreference.DamageMax));
 
-            bullet.GetComponent<Rigidbody>().AddForce(direction * RL_Game_Variables.DefaultBulletPower);
+            bullet.GetComponent<Rigidbody>().AddForce(direction * weaponPreference.BulletPower);
 
             yield return new WaitForSeconds(weaponPreference.FireRate);
             makeFireCorutine = null;

@@ -1,6 +1,7 @@
 using Reckless.Items;
 using System.Collections;
 using System.Collections.Generic;
+using Reckless.Entities;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -12,10 +13,11 @@ namespace Reckless
 
         [SerializeField] RL_Items_Database itemsDatabase;
         [SerializeField] RL_Weapons_Database weaponsDatabase;
-        [FormerlySerializedAs("bulletPower")]
-        [SerializeField] float defaultBulletPower = 2000;
+        [SerializeField] RL_GamePrefab_Database gamePrefabDatabase;
+        public static RL_GamePrefab_Database GamePrefabDatabase => instance.gamePrefabDatabase;
 
-        public static float DefaultBulletPower => instance.defaultBulletPower;
+        [SerializeField] bool hitBoxPopupState = true;
+        public static bool HitBoxPopupState => instance.hitBoxPopupState;
 
         public void Awake()
         {
