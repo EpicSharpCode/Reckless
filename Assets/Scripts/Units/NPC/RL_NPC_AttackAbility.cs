@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace Reckless.Unit.AI
 {
-    public class RL_Unit_NPC_AttackAbility : RL_Unit_NPC_Ability
+    public class RL_NPC_AttackAbility : RL_NPC_Ability
     {
         [SerializeField] RL_WeaponPreference weaponPreference;
         [SerializeField] float weaponYOffset = 1;
 
-        RL_Unit_NPC thisNPC;
+        RL_NPC thisNPC;
 
         Coroutine makeFireCorutine = null;
 
         void Awake()
         {
-            thisNPC = GetComponent<RL_Unit_NPC>();
+            thisNPC = GetComponent<RL_NPC>();
         }
 
         public override void Attack() => MakeFireUpdate();

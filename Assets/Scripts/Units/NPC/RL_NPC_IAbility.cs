@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Reckless.Unit.AI
 { 
-    public interface RL_Unit_NPC_IAbility
+    public interface RL_NPC_IAbility
     {
-        public void PerformStart(RL_Unit_NPC _npc);
-        public void PerformUpdate(RL_Unit_NPC _npc);
+        public void PerformStart(RL_NPC _npc);
+        public void PerformUpdate(RL_NPC _npc);
         
         public void Idle();
         public void Patrolling();

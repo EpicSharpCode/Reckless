@@ -4,41 +4,41 @@ using UnityEngine;
 
 namespace Reckless.Unit.AI
 {
-    public abstract class RL_Unit_NPC_Ability : MonoBehaviour, RL_Unit_NPC_IAbility
+    public abstract class RL_NPC_Ability : MonoBehaviour, RL_NPC_IAbility
     {
         #region MonoBehavior
         
-        public virtual void PerformStart(RL_Unit_NPC _npc) { }
-        public virtual void PerformUpdate(RL_Unit_NPC _npc)
+        public virtual void PerformStart(RL_NPC _npc) { }
+        public virtual void PerformUpdate(RL_NPC _npc)
         {
             switch (_npc.NPCState)
             {
-                case RL_Unit_NPC.NPC_State.Idle :
+                case RL_NPC.NPC_State.Idle :
                 {
                     Idle();
                     break;
                 }
-                case RL_Unit_NPC.NPC_State.Patrolling :
+                case RL_NPC.NPC_State.Patrolling :
                 {
                     Patrolling();
                     break;
                 }
-                case RL_Unit_NPC.NPC_State.Pursuit :
+                case RL_NPC.NPC_State.Pursuit :
                 {
                     Pursuit();
                     break;
                 }
-                case RL_Unit_NPC.NPC_State.Attack :
+                case RL_NPC.NPC_State.Attack :
                 {
                     Attack();
                     break;
                 }
-                case RL_Unit_NPC.NPC_State.AttackAndPursuit:
+                case RL_NPC.NPC_State.AttackAndPursuit:
                 {
                     AttackAndPursuit();
                     break;
                 }
-                case RL_Unit_NPC.NPC_State.Defence :
+                case RL_NPC.NPC_State.Defence :
                 {
                     Defence();
                     break;

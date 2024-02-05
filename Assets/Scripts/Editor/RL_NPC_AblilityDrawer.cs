@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace Reckless.EditorExtension
 {
-    [CustomPropertyDrawer(typeof(RL_Unit_NPC_AbilityWithWraper))]
-    public class RL_Unit_NPC_AbilityDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(RL_NPC_AbilityWithWraper))]
+    public class RL_NPC_AbilityDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {

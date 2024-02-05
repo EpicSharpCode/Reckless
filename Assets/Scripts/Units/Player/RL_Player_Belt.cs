@@ -11,29 +11,14 @@ namespace Reckless.Unit
         [SerializeField] RL_WeaponObject currentWeapon;
         [SerializeField] List<RL_WeaponObject> weapons;
         [SerializeField] int maxWeapons = 4;
-
-        [SerializeField] float weaponBulletsOffset = 0.6f;
-        [SerializeField] float weaponYOffset = 1;
+        
+        [SerializeField] Transform shootSource;
 
         Coroutine makeFireCorutine = null;
         void Update()
         {
             if (Input.GetMouseButton(0))
             {
-                /* Debug
-                Vector3 weaponOrigin = new Vector3(
-                    transform.position.x,
-                    transform.position.y + weaponYOffset, 
-                    transform.position.z);
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit raycastHit = Physics.RaycastAll(ray)[0];
-                Vector3 hit = raycastHit.point;
-                hit.y = weaponOrigin.y;
-                Vector3 direction = (hit - weaponOrigin).normalized;
-                Debug.DrawRay(weaponOrigin + (direction * weaponBulletsOffset), direction, Color.red, 5);
-                */
-
-
                 if(makeFireCorutine != null) { return; }
                 makeFireCorutine = StartCoroutine(MakeFire());
             }
@@ -47,22 +32,13 @@ namespace Reckless.Unit
 
             if (Input.GetMouseButton(0))
             {
-                Vector3 weaponOrigin = new Vector3(
-                    transform.position.x,
-                    transform.position.y + weaponYOffset,
-                    transform.position.z);
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit[] raycastHits = Physics.RaycastAll(ray);
-                if(raycastHits.Length == 0) yield break;
-                RaycastHit raycastHit = raycastHits[0];
-                Vector3 hit = raycastHit.point;
-                hit.y = weaponOrigin.y;
-                Vector3 direction = (hit - weaponOrigin).normalized;
+                Vector3 weaponOrigin = shootSource.position;
+                Vector3 direction = shootSource.forward;
 
                 Debug.Log($"Fire with fire rate: {weaponPreference.FireRate}");
 
                 var bullet = Instantiate(weaponPreference.BulletPrefab);
-                bullet.transform.position = weaponOrigin + direction;
+                bullet.transform.position = weaponOrigin;
                 bullet.Setup(Random.Range(weaponPreference.DamageMin, weaponPreference.DamageMax));
 
                 bullet.GetComponent<Rigidbody>().AddForce(direction * currentWeapon.WeaponPrefrence.BulletPower);

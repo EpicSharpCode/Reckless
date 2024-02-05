@@ -6,16 +6,16 @@ using UnityEngine.AI;
 
 namespace Reckless.Unit.AI 
 {
-    public class RL_Unit_NPC_MovementAbility : RL_Unit_NPC_Ability
+    public class RL_NPC_MovementAbility : RL_NPC_Ability
     {
         [SerializeField] NavMeshAgent agent;
         [SerializeField] List<Transform> patrollingPoints;
 
-        RL_Unit_NPC thisNPC;
+        RL_NPC thisNPC;
 
         void Awake()
         {
-            thisNPC = GetComponent<RL_Unit_NPC>();
+            thisNPC = GetComponent<RL_NPC>();
         }
 
         public override void Idle() { agent.isStopped = true; }

@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace Reckless.Unit.AI
 {
-    public class RL_Unit_NPC : RL_Unit
+    public class RL_NPC : RL_Unit
     {
         [Header("NPC Settings")]
 
-        [SerializeField] List<RL_Unit_NPC_AbilityWithWraper> abilities;
+        [SerializeField] List<RL_NPC_AbilityWithWraper> abilities;
 
         [SerializeField] NPC_State npcState;
         public NPC_State NPCState => npcState;
         
         [SerializeField] RL_Unit goal;
         public RL_Unit Goal => goal;
-        public List<RL_Unit_NPC_AbilityWithWraper> Abilities => abilities;
+        public List<RL_NPC_AbilityWithWraper> Abilities => abilities;
         
 
         void Start() => Abilities.ForEach(x => x.Ability.PerformStart(this));
