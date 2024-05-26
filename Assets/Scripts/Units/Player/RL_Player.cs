@@ -14,10 +14,9 @@ namespace Reckless.Unit
         }
         public override void InitParameters()
         {
-            
             parameters = new List<RL_Unit_Parameter>()
             {
-                new("Health", 1000, 0, 1000), 
+                new("Health", 100, 0, 100), 
                 new("Armor", 0)
             };
         }

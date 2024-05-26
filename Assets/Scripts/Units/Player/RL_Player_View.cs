@@ -5,11 +5,12 @@ namespace Reckless.Unit
 {
     public class RL_Player_View : MonoBehaviour
     {
+        [SerializeField] bool rotateBody = true;
         [SerializeField] Transform body;
         [SerializeField] float lookAtSpeed = 10;
         void Update()
         {
-            LookAtMouse();
+            if(rotateBody) LookAtMouse();
         }
 
         void LookAtMouse()

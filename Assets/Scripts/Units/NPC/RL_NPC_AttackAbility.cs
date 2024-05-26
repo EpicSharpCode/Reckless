@@ -2,13 +2,14 @@ using Reckless.Weapon;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Reckless.Unit.AI
 {
     public class RL_NPC_AttackAbility : RL_NPC_Ability
     {
-        [SerializeField] RL_WeaponPreference weaponPreference;
-        [SerializeField] float weaponYOffset = 1;
+        [SerializeField] RL_WeaponPreference _weaponPreference;
+        [SerializeField] float _weaponYOffset = 1;
 
         RL_NPC thisNPC;
 
@@ -32,11 +33,11 @@ namespace Reckless.Unit.AI
 
         public IEnumerator MakeFire()
         {
-            if (weaponPreference == null) { yield break; }
+            if (_weaponPreference == null) { yield break; }
 
             Vector3 weaponOrigin = new Vector3(
                 transform.position.x,
-                transform.position.y + weaponYOffset,
+                transform.position.y + _weaponYOffset,
                 transform.position.z);
             var goal = thisNPC.Goal;
             if(goal == null) yield break;
@@ -44,15 +45,13 @@ namespace Reckless.Unit.AI
             goalPos.y = weaponOrigin.y;
             Vector3 direction = (goalPos - weaponOrigin).normalized;
 
-            Debug.Log($"Fire with fire rate: {weaponPreference.FireRate}");
-
-            var bullet = Instantiate(weaponPreference.BulletPrefab);
+            var bullet = Instantiate(_weaponPreference.BulletPrefab);
             bullet.transform.position = weaponOrigin + direction;
-            bullet.Setup(Random.Range(weaponPreference.DamageMin, weaponPreference.DamageMax));
+            bullet.Setup(Random.Range(_weaponPreference.DamageMin, _weaponPreference.DamageMax));
 
-            bullet.GetComponent<Rigidbody>().AddForce(direction * weaponPreference.BulletPower);
+            bullet.GetComponent<Rigidbody>().AddForce(direction * _weaponPreference.BulletPower);
 
-            yield return new WaitForSeconds(weaponPreference.FireRate);
+            yield return new WaitForSeconds(_weaponPreference.FireRate);
             makeFireCorutine = null;
         }
     }

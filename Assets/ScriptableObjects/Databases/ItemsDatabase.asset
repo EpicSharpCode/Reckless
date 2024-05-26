@@ -15,5 +15,5 @@ MonoBehaviour:
   items:
   - itemName: Apple
     itemID: Apple
-    localizedName: "\u042F\u0431\u043B\u043E\u043A\u043E"
+    localizedName: Apple
     value: 0.2

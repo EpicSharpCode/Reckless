@@ -6,6 +6,8 @@ namespace Reckless.Unit.AI
 {
     public abstract class RL_NPC_Ability : MonoBehaviour, RL_NPC_IAbility
     {
+        protected int _patrollingIndex = 0;
+        
         #region MonoBehavior
         
         public virtual void PerformStart(RL_NPC _npc) { }
