@@ -4612,17 +4612,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 972120978}
     - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: goal
-      value: 
-      objectReference: {fileID: 2073440629}
-    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: _goal
       value: 
       objectReference: {fileID: 2073440629}
-    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
-      propertyPath: npcState
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: _npcState
       value: 1

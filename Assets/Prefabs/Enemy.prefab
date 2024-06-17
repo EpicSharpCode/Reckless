@@ -134,12 +134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameters: []
-  abilities:
-  - ability: {fileID: 392714644403199277}
+  _abilities:
   - ability: {fileID: 760757960849622333}
   - ability: {fileID: 760757960849622320}
-  npcState: 0
-  goal: {fileID: 0}
+  - ability: {fileID: 392714644403199277}
+  _npcState: 0
+  _goal: {fileID: 0}
 --- !u!114 &760757960849622333
 MonoBehaviour:
   m_ObjectHideFlags: 0
