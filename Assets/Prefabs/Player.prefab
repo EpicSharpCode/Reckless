@@ -90,6 +90,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -166,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e4d5ff2b46c9a488c55bd0645b1c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameters: []
+  _parameters: []
 --- !u!114 &8864479203753231183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc726a5d0b64c484493bbd3b7fbb2ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  gravity: 9.8
+  _speed: 10
+  _gravity: 9.8
 --- !u!114 &2501862879071271483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671feb5d3b547c646933ce71824d4689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxItems: 10
-  items: []
+  _maxItems: 10
+  _items: []
 --- !u!114 &243754512733364995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,10 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentWeapon:
-    itemName: 
-    itemID: 
-    localizedName: 
-    value: 0
+    _itemName: 
+    _itemID: 
+    _localizedName: 
+    _value: 0
     _weaponPrefrence: {fileID: 0}
   _weapons: []
   _maxWeapons: 4
@@ -229,9 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac527cf435342d1b3b058ee3005e313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateBody: 1
-  body: {fileID: 8864479203043863792}
-  lookAtSpeed: 10
+  _rotateBody: 1
+  _body: {fileID: 8864479203043863792}
+  _lookAtSpeed: 10
 --- !u!143 &8864479203753231176
 CharacterController:
   m_ObjectHideFlags: 0
@@ -247,7 +250,6 @@ CharacterController:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

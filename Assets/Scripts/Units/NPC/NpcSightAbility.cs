@@ -7,11 +7,11 @@ namespace Reckless.Units.AI
 {
     public class NpcSightAbility : NpcAbility
     {
-        public List<Unit> unitsInSight => _unitsInSight;
-
         [SerializeField] float _sightAngle;
         [SerializeField] List<Unit> _unitsInSight;
         [SerializeField] Vector3 _scanOffset;
+        
+        public List<Unit> unitsInSight => _unitsInSight;
         public override void PerformUpdate(Npc npc)
         {
             _unitsInSight = ScanForUnits(npc);

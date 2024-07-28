@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Reckless.Units
 {
-    public abstract class Unit : MonoBehaviour
+    public class Unit : MonoBehaviour
     {
         [NonReorderable] [SerializeField] protected List<UnitParameter> _parameters;
         public List<UnitParameter> parameters => _parameters;
