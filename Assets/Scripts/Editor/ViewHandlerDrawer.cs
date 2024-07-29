@@ -2,7 +2,6 @@ using Reckless.UI;
 using UnityEditor;
 using UnityEngine;
 
-/*
 namespace Reckless.EditorExtension
 {
 [CustomPropertyDrawer(typeof(UiViewHandler), true)]
@@ -12,9 +11,9 @@ const float SPACING = 10;
 
 public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 {
-    var viewNameProperty = property.FindPropertyRelative("viewName");
-    var viewProperty = property.FindPropertyRelative("view");
-    var showByDefaultProperty = property.FindPropertyRelative("showByDefault");
+    var viewNameProperty = property.FindPropertyRelative("_viewName");
+    var viewProperty = property.FindPropertyRelative("_view");
+    var showByDefaultProperty = property.FindPropertyRelative("_showByDefault");
 
     EditorGUI.BeginProperty(position, label, property);
 
@@ -31,4 +30,3 @@ public override void OnGUI(Rect position, SerializedProperty property, GUIConten
 }
     }
 }
-*/

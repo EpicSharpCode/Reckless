@@ -58,6 +58,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -133,11 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cc1c4498b97bb4c9c43c68a8eb901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameters: []
+  _parameters: []
   _abilities:
-  - ability: {fileID: 760757960849622333}
-  - ability: {fileID: 760757960849622320}
-  - ability: {fileID: 392714644403199277}
+  - {fileID: 760757960849622333}
+  - {fileID: 760757960849622320}
+  - {fileID: 392714644403199277}
   _npcState: 0
   _goal: {fileID: 0}
 --- !u!114 &760757960849622333
@@ -154,8 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 760757960849622331}
   _patrollingPoints: []
-  stoppingDistancePatrolling: 0
-  stoppingDistancePursuit: 3
+  _stoppingDistancePatrolling: 0
+  _stoppingDistancePursuit: 3
 --- !u!114 &760757960849622320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,9 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323a0614f9e0b4400ab9739222e77bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightAngle: 0
-  unitsInSight: []
-  scanOffset: {x: 0, y: 0, z: 0}
+  _sightAngle: 120
+  _unitsInSight: []
+  _scanOffset: {x: 0, y: 1.5, z: 0}
 --- !u!195 &760757960849622331
 NavMeshAgent:
   m_ObjectHideFlags: 0

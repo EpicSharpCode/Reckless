@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 1083853251}
   - component: {fileID: 1083853250}
   m_Layer: 0
-  m_Name: RL_Game_Variables
+  m_Name: GameVariables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2524,7 +2524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1424074092
 Transform:
   m_ObjectHideFlags: 0
@@ -3248,7 +3248,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 760757960849622330, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemySearching
       objectReference: {fileID: 0}
     - target: {fileID: 760757960849622330, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: m_IsActive
@@ -4290,7 +4290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2067982406
 Transform:
   m_ObjectHideFlags: 0
@@ -4453,6 +4453,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1424074092}
     m_Modifications:
+    - target: {fileID: 392714644403199277, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 760757960849622320, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 760757960849622330, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: m_Name
       value: EnemyPatroling
@@ -4465,6 +4473,10 @@ PrefabInstance:
       propertyPath: _agent
       value: 
       objectReference: {fileID: 979594578}
+    - target: {fileID: 760757960849622333, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 760757960849622333, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: patrollingPoints.Array.size
       value: 3
@@ -4516,6 +4528,14 @@ PrefabInstance:
     - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: _npcState
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 760757960849622334, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
+      propertyPath: _parameters.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 760757960849622335, guid: aace207099ba9b549bc54e3b1a6f050b, type: 3}
       propertyPath: m_RootOrder

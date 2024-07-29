@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Reckless.Units.AI
 { 
-    public interface IAbilityNpc
+    public interface INpcAbility
     {
         public void PerformStart(Npc npc);
         public void PerformUpdate(Npc npc);

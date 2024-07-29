@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 namespace Reckless.Units.AI 
 {
-    public class NpcMovementAbility : NpcAbility
+    public class NpcAbilityMovement : NpcAbility
     {
         [SerializeField] NavMeshAgent _agent;
         [SerializeField] List<Transform> _patrollingPoints;

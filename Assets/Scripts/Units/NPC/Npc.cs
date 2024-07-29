@@ -10,7 +10,7 @@ namespace Reckless.Units.AI
     {
         [Header("NPC Settings")]
 
-        [SerializeField] List<NpcAbilityWithWraper> _abilities;
+        [SerializeField] List<NpcAbility> _abilities;
 
         [SerializeField] NpcState _npcState;
         public NpcState npcState => _npcState;
@@ -18,20 +18,15 @@ namespace Reckless.Units.AI
         [SerializeField] Unit _goal;
         
         public Unit goal => _goal;
-        public List<NpcAbilityWithWraper> abilities => _abilities;
+        public List<NpcAbility> abilities => _abilities;
         
 
-        void Start() => abilities.ForEach(x => x.ability.PerformStart(this));
-        void Update() => abilities.ForEach(x => x.ability.PerformUpdate(this));
+        void Start() => abilities.ForEach(
+            x => { if(x.isActiveAndEnabled) x.PerformStart(this); }
+        );
+        void Update() => abilities.ForEach(
+            x => { if(x.isActiveAndEnabled) x.PerformUpdate(this); }
+        );
 
-        public enum NpcState
-        {
-            Idle,
-            Patrolling,
-            Pursuit,
-            AttackAndPursuit,
-            Attack,
-            Defence
-        }
     }
 }

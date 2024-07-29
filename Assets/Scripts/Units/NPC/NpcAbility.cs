@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Reckless.Units.AI
 {
-    public abstract class NpcAbility : MonoBehaviour, IAbilityNpc
+    public abstract class NpcAbility : MonoBehaviour, INpcAbility
     {
         protected int _patrollingIndex = 0;
         
@@ -15,32 +15,32 @@ namespace Reckless.Units.AI
         {
             switch (npc.npcState)
             {
-                case Npc.NpcState.Idle :
+                case NpcState.Idle :
                 {
                     Idle();
                     break;
                 }
-                case Npc.NpcState.Patrolling :
+                case NpcState.Patrolling :
                 {
                     Patrolling();
                     break;
                 }
-                case Npc.NpcState.Pursuit :
+                case NpcState.Pursuit :
                 {
                     Pursuit();
                     break;
                 }
-                case Npc.NpcState.Attack :
+                case NpcState.Attack :
                 {
                     Attack();
                     break;
                 }
-                case Npc.NpcState.AttackAndPursuit:
+                case NpcState.AttackAndPursuit:
                 {
                     AttackAndPursuit();
                     break;
                 }
-                case Npc.NpcState.Defence :
+                case NpcState.Defence :
                 {
                     Defence();
                     break;

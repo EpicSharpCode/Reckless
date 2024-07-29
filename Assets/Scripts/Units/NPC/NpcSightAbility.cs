@@ -7,7 +7,7 @@ namespace Reckless.Units.AI
 {
     public class NpcSightAbility : NpcAbility
     {
-        [SerializeField] float _sightAngle;
+        [SerializeField] float _sightAngle = 120;
         [SerializeField] List<Unit> _unitsInSight;
         [SerializeField] Vector3 _scanOffset;
         
@@ -38,12 +38,15 @@ namespace Reckless.Units.AI
             Ray ray = new Ray(origin, direction);
             if (debug)
             {
-                Debug.DrawRay(origin, direction, Color.red,1);
-                return null;
+                Debug.DrawRay(origin, direction * 10, Color.red,1);
             }
 
-            Physics.Raycast(ray, out RaycastHit raycastHit);
-            return raycastHit.transform.GetComponent<Unit>();
+            Physics.Raycast(ray, out RaycastHit raycastHit, 10);
+            if (raycastHit.collider != null)
+            {
+                return raycastHit.collider.transform.GetComponentInParent<Unit>();
+            }
+            return null;
         }
     }
 }

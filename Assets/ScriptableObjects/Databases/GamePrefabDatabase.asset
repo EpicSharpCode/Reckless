@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cc78ae5c6904c62989ad8a79b4602e, type: 3}
   m_Name: GamePrefabDatabase
   m_EditorClassIdentifier: 
-  hitPopup: {fileID: 3180056562844028834, guid: 336a19958418c4ea4885c15d46c85865, type: 3}
+  _hitPopup: {fileID: 3180056562844028834, guid: 336a19958418c4ea4885c15d46c85865, type: 3}
