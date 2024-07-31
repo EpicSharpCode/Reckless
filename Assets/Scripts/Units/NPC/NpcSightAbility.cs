@@ -16,7 +16,7 @@ namespace Reckless.Units.AI
         {
             _unitsInSight = ScanForUnits(npc);
         }
-
+        
         public List<Unit> ScanForUnits(Unit unit)
         {
             List<Unit> foundedUnits = new List<Unit>();
@@ -48,5 +48,18 @@ namespace Reckless.Units.AI
             }
             return null;
         }
+        
+        
+        #region Ability state methods
+        
+        public override void IdleState() {}
+        public override void PatrollingState() {}
+        public override void PursuitState() {}
+        public override void AttackAndPursuitState() {}
+        public override void DefenceState() {}
+        public override void AttackState() {}
+        
+        #endregion
+
     }
 }

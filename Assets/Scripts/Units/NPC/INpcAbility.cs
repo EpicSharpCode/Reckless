@@ -9,11 +9,11 @@ namespace Reckless.Units.AI
         public void PerformStart(Npc npc);
         public void PerformUpdate(Npc npc);
         
-        public void Idle();
-        public void Patrolling();
-        public void Pursuit();
-        public void AttackAndPursuit();
-        public void Attack();
-        public void Defence();
+        public void IdleState();
+        public void PatrollingState();
+        public void PursuitState();
+        public void AttackAndPursuitState();
+        public void AttackState();
+        public void DefenceState();
     }
 }

@@ -7,27 +7,42 @@ using UnityEngine.Serialization;
 
 namespace Reckless.Units.AI 
 {
+    [RequireComponent(typeof(NavMeshAgent), typeof(Npc))]
     public class NpcAbilityMovement : NpcAbility
     {
-        [SerializeField] NavMeshAgent _agent;
+        NavMeshAgent _agent;
+        Npc _thisNpc;
+        
+        
         [SerializeField] List<Transform> _patrollingPoints;
 
         [Header("Stopping Distances")]
         [SerializeField] float _stoppingDistancePatrolling = 0;
         [SerializeField] float _stoppingDistancePursuit = 3;
 
-        Npc _thisNpc;
 
         void Awake()
         {
             _thisNpc = GetComponent<Npc>();
+            _agent = GetComponent<NavMeshAgent>();
+        }
+        
+        void GoToGoal()
+        {
+            if (_thisNpc?.goal == null) return;
+            _agent.SetDestination(_thisNpc.goal.transform.position);
+            _agent.isStopped = false;
         }
 
-        public override void Idle() { _agent.isStopped = true; }
-        public override void Pursuit() => GoToGoal();
-        public override void AttackAndPursuit() => GoToGoal();
+        #region Ability state methods
 
-        public override void Patrolling()
+        public override void IdleState() { _agent.isStopped = true; }
+        public override void PursuitState() => GoToGoal();
+        public override void AttackState() {}
+        public override void DefenceState() {}
+        public override void AttackAndPursuitState() => GoToGoal();
+
+        public override void PatrollingState()
         {
             if(_patrollingPoints.Count == 0) return;
             
@@ -38,12 +53,7 @@ namespace Reckless.Units.AI
             if (Vector3.Distance(_agent.transform.position, _patrollingPoints[nextIndex].position) <= 0.1f)
                 _patrollingIndex++;
         }
+        #endregion
 
-        void GoToGoal()
-        {
-            if (_thisNpc?.goal == null) return;
-            _agent.SetDestination(_thisNpc.goal.transform.position);
-            _agent.isStopped = false;
-        }
     }
 }

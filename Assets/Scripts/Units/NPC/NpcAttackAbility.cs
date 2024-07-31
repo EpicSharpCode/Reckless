@@ -20,8 +20,6 @@ namespace Reckless.Units.AI
             _thisNpc = GetComponent<Npc>();
         }
 
-        public override void Attack() => MakeFireUpdate();
-        public override void AttackAndPursuit() => MakeFireUpdate();
 
 
         void MakeFireUpdate()
@@ -54,5 +52,17 @@ namespace Reckless.Units.AI
             yield return new WaitForSeconds(_weaponPreference.fireRate);
             _makeFireCorutine = null;
         }
+        
+        
+        #region Ability state methods
+
+        public override void AttackState() => MakeFireUpdate();
+        public override void AttackAndPursuitState() => MakeFireUpdate();
+        public override void IdleState() {}
+        public override void PatrollingState() {}
+        public override void PursuitState() {}
+        public override void DefenceState() {}
+        
+        #endregion
     }
 }

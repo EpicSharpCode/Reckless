@@ -8,7 +8,6 @@ namespace Reckless.Units.AI
     {
         protected int _patrollingIndex = 0;
         
-        #region MonoBehavior
         
         public virtual void PerformStart(Npc npc) { }
         public virtual void PerformUpdate(Npc npc)
@@ -17,48 +16,48 @@ namespace Reckless.Units.AI
             {
                 case NpcState.Idle :
                 {
-                    Idle();
+                    IdleState();
                     break;
                 }
                 case NpcState.Patrolling :
                 {
-                    Patrolling();
+                    PatrollingState();
                     break;
                 }
                 case NpcState.Pursuit :
                 {
-                    Pursuit();
+                    PursuitState();
                     break;
                 }
                 case NpcState.Attack :
                 {
-                    Attack();
+                    AttackState();
                     break;
                 }
                 case NpcState.AttackAndPursuit:
                 {
-                    AttackAndPursuit();
+                    AttackAndPursuitState();
                     break;
                 }
                 case NpcState.Defence :
                 {
-                    Defence();
+                    DefenceState();
                     break;
                 }
             }
         }
 
-        #endregion
+        
 
         #region Ability state methods
-        
-        public virtual void Idle() { }
-        public virtual void Patrolling() { }
-        public virtual void Pursuit() { }
-        public virtual void Attack() { }
-        public virtual void AttackAndPursuit() { }
-        public virtual void Defence() { }
-        
+
+        public abstract void IdleState();
+        public abstract void PatrollingState();
+        public abstract void PursuitState();
+        public abstract void AttackState();
+        public abstract void AttackAndPursuitState();
+        public abstract void DefenceState();
+
         #endregion
     }
 }
