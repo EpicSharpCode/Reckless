@@ -16,7 +16,7 @@ namespace Reckless.EditorExtension
         {
             base.OnInspectorGUI();
             
-            FindObjectOfType<GameVariables>().Awake();
+            FindObjectOfType<GameController>().Awake();
             EditorGUI.BeginChangeCheck();
             
             BoxEntity box = target.GetComponent<BoxEntity>();

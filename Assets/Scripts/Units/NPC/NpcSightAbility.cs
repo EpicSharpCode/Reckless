@@ -10,6 +10,8 @@ namespace Reckless.Units.AI
         [SerializeField] float _sightAngle = 120;
         [SerializeField] List<Unit> _unitsInSight;
         [SerializeField] Vector3 _scanOffset;
+
+        [SerializeField] NpcState _stateOnSeeAnyone;
         
         public List<Unit> unitsInSight => _unitsInSight;
         public override void PerformUpdate(Npc npc)

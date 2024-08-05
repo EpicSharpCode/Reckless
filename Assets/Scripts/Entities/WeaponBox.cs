@@ -12,7 +12,7 @@ namespace Reckless.Entities
 
         public WeaponBox(WeaponObject weaponObject) => _weaponObject = weaponObject;
         
-        public override List<ItemObject> boxContent => GameVariables.GetAllWeapons().Cast<ItemObject>().ToList();
+        public override List<ItemObject> boxContent => GameController.GetAllWeapons().Cast<ItemObject>().ToList();
         public override string boxContentName => "Weapon";
 
         
@@ -20,7 +20,7 @@ namespace Reckless.Entities
         public override void Setup(int itemIndex)
         {
             if(itemIndex < 1) return;
-            _weaponObject = GameVariables.GetWeapon(itemIndex - 1);
+            _weaponObject = GameController.GetWeapon(itemIndex - 1);
             _nameText.text = _weaponObject.localizedName;
         }
         public override void Pickup(Unit player)

@@ -15,15 +15,22 @@ MonoBehaviour:
   _teams:
   - _teamName: Player
     _allyTeams:
-    - Aliance
+    - _teamName: Aliance
+      _inSightBehaviour: 0
     _enemiesTeams:
-    - Enemy
+    - _teamName: Corp
+      _inSightBehaviour: 0
   - _teamName: Aliance
     _allyTeams:
-    - Player
+    - _teamName: Player
+      _inSightBehaviour: 5
     _enemiesTeams:
-    - Enemy
-  - _teamName: Enemy
+    - _teamName: Corp
+      _inSightBehaviour: 3
+  - _teamName: Corp
     _allyTeams: []
     _enemiesTeams:
-    - Player
+    - _teamName: Aliance
+      _inSightBehaviour: 3
+    - _teamName: Player
+      _inSightBehaviour: 3

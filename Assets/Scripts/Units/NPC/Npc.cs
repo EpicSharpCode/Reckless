@@ -13,6 +13,8 @@ namespace Reckless.Units.AI
         [SerializeField] List<NpcAbility> _abilities;
 
         [SerializeField] NpcState _npcState;
+        [SerializeField] string _npcTeam;
+        public UnitTeam npcTeam => GameController.GetTeam(_npcTeam);
         public NpcState npcState => _npcState;
         
         [SerializeField] Unit _goal;

@@ -40,9 +40,9 @@ namespace Reckless.Entities
             
             var unit = hit.collider.GetComponent<Unit>();
             unit?.Damage(_damage);
-            if (GameVariables.hitBoxPopupState)
+            if (GameController.hitBoxPopupState)
             {
-                var hitPopup = Instantiate(GameVariables.gamePrefabDatabase.hitPopupPrefab) as HitPopup;
+                var hitPopup = Instantiate(GameController.gamePrefabDatabase.hitPopupPrefab) as HitPopup;
                 hitPopup.transform.position = hit.point;
                 hitPopup.Setup(_damage);
             }

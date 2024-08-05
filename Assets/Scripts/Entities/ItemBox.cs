@@ -13,7 +13,7 @@ namespace Reckless.Entities
         ItemObject _itemObject;
 
         public ItemBox(ItemObject itemObject) => _itemObject = itemObject;
-        public override List<ItemObject> boxContent => GameVariables.GetAllItems();
+        public override List<ItemObject> boxContent => GameController.GetAllItems();
         public override string boxContentName => "Item";
 
 
@@ -21,7 +21,7 @@ namespace Reckless.Entities
         public override void Setup(int itemIndex) 
         { 
             if(itemIndex < 1) return;
-            _itemObject = GameVariables.GetItem(itemIndex - 1);
+            _itemObject = GameController.GetItem(itemIndex - 1);
             _nameText.text = _itemObject.localizedName;
         }
 
